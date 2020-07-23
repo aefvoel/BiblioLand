@@ -1,5 +1,5 @@
 //
-//  BagVC.swift
+//  CheckoutVC.swift
 //  BiblioLand
 //
 //  Created by Dicky Geraldi on 24/07/20.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BagVC: UIViewController {
-    
-    @IBOutlet weak var checkoutButton: UIButton!
+class CheckoutVC: UIViewController {
+
+    @IBOutlet weak var PayProccess: UIButton!
     
     func setUpView() {
-        checkoutButton.greenButton()
+        PayProccess.greenButton()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpView()
     }
 }

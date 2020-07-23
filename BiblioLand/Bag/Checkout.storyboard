@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--BagVC-->
         <scene sceneID="QBq-Fh-y8F">
             <objects>
-                <viewController id="GQd-Ew-vWq" sceneMemberID="viewController">
+                <viewController id="GQd-Ew-vWq" customClass="BagVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rf8-8p-E2D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +25,7 @@
                                 <rect key="frame" x="20" y="790" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Hijau"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Proceed to Checkout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -34,6 +35,9 @@
                         <viewLayoutGuide key="safeArea" id="e1W-rp-INp"/>
                     </view>
                     <navigationItem key="navigationItem" id="mq7-bh-NPR"/>
+                    <connections>
+                        <outlet property="checkoutButton" destination="Wa4-g6-e1h" id="Cik-LV-LmG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZI-kN-89b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
