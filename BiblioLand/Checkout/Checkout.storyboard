@@ -60,7 +60,7 @@
                                 </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-Xg-g5m">
-                                <rect key="frame" x="0.0" y="44" width="423" height="1035"/>
+                                <rect key="frame" x="0.0" y="44" width="423" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-46-9JT">
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bb6-GY-LG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-770"/>
+            <point key="canvasLocation" x="940.57971014492762" y="-770.08928571428567"/>
         </scene>
     </scenes>
     <resources>
