@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425C957F24C1ABE000E807A1 /* ButtonDoProccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */; };
+		425C958124C1B0D500E807A1 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C958024C1B0D500E807A1 /* CartView.swift */; };
+		427FA17124C198C2008E3D40 /* BooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17024C198C2008E3D40 /* BooksData.swift */; };
+		427FA17324C19C02008E3D40 /* OtherBooksReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17224C19C02008E3D40 /* OtherBooksReference.swift */; };
+		42E85B3124C9D2B2009C4A7E /* Checkout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E85B3024C9D2B2009C4A7E /* Checkout.storyboard */; };
 		ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */; };
 		ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */; };
 		ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF824C1421E00B704B7 /* ViewController.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDoProccess.swift; sourceTree = "<group>"; };
+		425C958024C1B0D500E807A1 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		427FA17024C198C2008E3D40 /* BooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksData.swift; sourceTree = "<group>"; };
+		427FA17224C19C02008E3D40 /* OtherBooksReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBooksReference.swift; sourceTree = "<group>"; };
+		42E85B3024C9D2B2009C4A7E /* Checkout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkout.storyboard; sourceTree = "<group>"; };
 		ABAF3DF124C1421E00B704B7 /* BiblioLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiblioLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427FA16E24C19893008E3D40 /* Bag */ = {
+			isa = PBXGroup;
+			children = (
+				427FA16F24C1989F008E3D40 /* Component */,
+				425C958024C1B0D500E807A1 /* CartView.swift */,
+				42E85B3024C9D2B2009C4A7E /* Checkout.storyboard */,
+			);
+			path = Bag;
+			sourceTree = "<group>";
+		};
+		427FA16F24C1989F008E3D40 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				427FA17024C198C2008E3D40 /* BooksData.swift */,
+				427FA17224C19C02008E3D40 /* OtherBooksReference.swift */,
+				425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		ABAF3DE824C1421E00B704B7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +88,7 @@
 		ABAF3DF324C1421E00B704B7 /* BiblioLand */ = {
 			isa = PBXGroup;
 			children = (
+				427FA16E24C19893008E3D40 /* Bag */,
 				ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */,
 				ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */,
 				ABAF3DF824C1421E00B704B7 /* ViewController.swift */,
@@ -128,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E85B3124C9D2B2009C4A7E /* Checkout.storyboard in Resources */,
 				ABAF3E0424C1421F00B704B7 /* LaunchScreen.storyboard in Resources */,
 				ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */,
 				ABAF3DFC24C1421E00B704B7 /* Main.storyboard in Resources */,
@@ -141,10 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425C957F24C1ABE000E807A1 /* ButtonDoProccess.swift in Sources */,
+				427FA17124C198C2008E3D40 /* BooksData.swift in Sources */,
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
+				425C958124C1B0D500E807A1 /* CartView.swift in Sources */,
+				427FA17324C19C02008E3D40 /* OtherBooksReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
