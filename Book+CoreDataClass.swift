@@ -2,7 +2,7 @@
 //  Book+CoreDataClass.swift
 //  BiblioLand
 //
-//  Created by Toriq Wahid Syaefullah on 22/07/20.
+//  Created by Toriq Wahid Syaefullah on 24/07/20.
 //  Copyright © 2020 Toriq Wahid Syaefullah. All rights reserved.
 //
 //

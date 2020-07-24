@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */; };
+		AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */; };
+		AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */; };
+		AB6F12CA24CAC525007929BA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */; };
 		ABA282A624C7F0C5002719DE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */; };
 		ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */; };
 		ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		ABAF3DF124C1421E00B704B7 /* BiblioLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiblioLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,10 @@
 		ABA2829B24C7EF4F002719DE /* model */ = {
 			isa = PBXGroup;
 			children = (
+				AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */,
+				AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */,
+				AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */,
+				AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -265,17 +277,21 @@
 				D73CFDAC24C95C32001367D9 /* Maps.swift in Sources */,
 				D73CFDA824C95C16001367D9 /* SearchBookTableViewController.swift in Sources */,
 				D76F046024C73FC400EC3999 /* AllBookTableViewCell.swift in Sources */,
+				AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
 				D75DB6F024C6D51B00263F03 /* BookCollectionViewCell.swift in Sources */,
+				AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */,
 				D75DB6EC24C6D50700263F03 /* BookTableViewCell.swift in Sources */,
 				D73CFDAA24C95C27001367D9 /* SearchLocationTableViewController.swift in Sources */,
 				D76F045A24C73F9900EC3999 /* AllBookCollectionViewCell.swift in Sources */,
+				AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */,
 				D75DB6F324C6D6FC00263F03 /* HomeViewController.swift in Sources */,
 				D76F046424C746D000EC3999 /* AllGenreCollectionViewCell.swift in Sources */,
 				E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
 				E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
+				AB6F12CA24CAC525007929BA /* User+CoreDataProperties.swift in Sources */,
 				D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */,
 				ABA282A624C7F0C5002719DE /* CoreDataHelper.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
