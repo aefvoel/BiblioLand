@@ -14,6 +14,9 @@
 		ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DFD24C1421E00B704B7 /* BiblioLand.xcdatamodeld */; };
 		ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABAF3E0024C1421F00B704B7 /* Assets.xcassets */; };
 		ABAF3E0424C1421F00B704B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAF3E0224C1421F00B704B7 /* LaunchScreen.storyboard */; };
+		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
+		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
+		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		ABAF3E0024C1421F00B704B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABAF3E0324C1421F00B704B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABAF3E0524C1421F00B704B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		ABAF3DF324C1421E00B704B7 /* BiblioLand */ = {
 			isa = PBXGroup;
 			children = (
+				E6BF0CF124C7E1F1008706A9 /* Onboarding */,
 				ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */,
 				ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */,
 				ABAF3DF824C1421E00B704B7 /* ViewController.swift */,
@@ -68,6 +75,16 @@
 				ABAF3DFD24C1421E00B704B7 /* BiblioLand.xcdatamodeld */,
 			);
 			path = BiblioLand;
+			sourceTree = "<group>";
+		};
+		E6BF0CF124C7E1F1008706A9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */,
+				E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */,
+				E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +148,7 @@
 				ABAF3E0424C1421F00B704B7 /* LaunchScreen.storyboard in Resources */,
 				ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */,
 				ABAF3DFC24C1421E00B704B7 /* Main.storyboard in Resources */,
+				E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +161,9 @@
 			files = (
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
+				E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
+				E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
