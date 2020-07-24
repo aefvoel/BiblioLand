@@ -48,10 +48,10 @@ class AllGenreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllGenreCollectionViewCell.identifier, for: indexPath) as! AllGenreCollectionViewCell
         
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = .zero
-        cell.layer.shadowRadius = 3
+        cell.layer.shadowRadius = 5
         
         cell.configure(with: genres[indexPath.row])
         
@@ -59,7 +59,7 @@ class AllGenreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 87, height: 39)
+        return CGSize(width: 89, height: 42)
     }
     
 }

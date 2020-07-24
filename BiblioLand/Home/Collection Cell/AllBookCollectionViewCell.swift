@@ -11,25 +11,24 @@ import UIKit
 class AllBookCollectionViewCell: UICollectionViewCell {
 
         @IBOutlet weak var bookImgView: UIImageView!
-       @IBOutlet weak var bookTitleLbl: UILabel!
-       @IBOutlet weak var bgView: UIView!
-       @IBOutlet weak var bookPriceLbl: UILabel!
+        @IBOutlet weak var bookTitleLbl: UILabel!
+        @IBOutlet weak var bgView: UIView!
+        @IBOutlet weak var bookPriceLbl: UILabel!
     
-       static let identifier = "AllBookCollectionViewCell"
-       static func nib() -> UINib{
-           return UINib(nibName: "AllBookCollectionViewCell", bundle: nil)
-       }
+        static let identifier = "AllBookCollectionViewCell"
+        static func nib() -> UINib{
+            return UINib(nibName: "AllBookCollectionViewCell", bundle: nil)
+        }
        
-       override func awakeFromNib() {
-           super.awakeFromNib()
-           // Initialization code
+        override func awakeFromNib() {
+            super.awakeFromNib()
            
-           bgView.layer.cornerRadius = 7.0
-       }
+            bgView.layer.cornerRadius = 7.0
+        }
 
-       public func configure(with book: Book){
+        public func configure(with book: Book){
            self.bookTitleLbl.text = book.bookTitle
            self.bookPriceLbl.text = book.bookPrice
            self.bookImgView.image = book.bookImg
-       }
+        }
 }

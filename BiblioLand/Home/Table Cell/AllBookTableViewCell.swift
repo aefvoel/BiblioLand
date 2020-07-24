@@ -47,10 +47,10 @@ class AllBookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllBookCollectionViewCell.identifier, for: indexPath) as! AllBookCollectionViewCell
         
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = .zero
-        cell.layer.shadowRadius = 3
+        cell.layer.shadowRadius = 5
         
         cell.configure(with: books[indexPath.row])
         

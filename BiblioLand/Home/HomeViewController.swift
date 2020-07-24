@@ -15,30 +15,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var books = [Book]()
     var genres = [Genre]()
     
+    let greenColor = UIColor(red: 0.24, green: 0.59, blue: 0.57, alpha: 1.00)
+    
     func setupNavbar() {
         let searchController = UISearchController(searchResultsController: nil)
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Book Title, Author or Lender Name"
         navigationItem.searchController = searchController
+        definesPresentationContext = true
+
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.searchTextField.backgroundColor = UIColor.white
+        searchController.searchBar.searchTextField.font = .systemFont(ofSize: 12.0)
+//        searchController.searchBar.setShowsCancelButton(false, animated: true)
+        
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0.24, green: 0.59, blue: 0.57, alpha: 1.00)
-
+        navigationController?.navigationBar.barTintColor = greenColor
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupNavbar()
-
-        table.register(BookTableViewCell.nib(), forCellReuseIdentifier: BookTableViewCell.identifier)
-        
-        table.register(AllBookTableViewCell.nib(), forCellReuseIdentifier: AllBookTableViewCell.identifier)
-
-        table.register(AllGenreTableViewCell.nib(), forCellReuseIdentifier: AllGenreTableViewCell.identifier)
-
-        table.delegate = self
-        table.dataSource = self
-        table.separatorStyle = .none
-        
+    func insertData(){
         books.append(Book(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
         books.append(Book(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
         books.append(Book(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
@@ -54,7 +52,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         genres.append(Genre(genreName: "Fantasy"))
         genres.append(Genre(genreName: "Mistery"))
         genres.append(Genre(genreName: "Romance"))
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNavbar()
 
+        table.register(BookTableViewCell.nib(), forCellReuseIdentifier: BookTableViewCell.identifier)
+        table.register(AllBookTableViewCell.nib(), forCellReuseIdentifier: AllBookTableViewCell.identifier)
+        table.register(AllGenreTableViewCell.nib(), forCellReuseIdentifier: AllGenreTableViewCell.identifier)
+
+        table.delegate = self
+        table.dataSource = self
+        table.separatorStyle = .none
+        
+        insertData()
     }
     
 
@@ -82,6 +96,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         headerView.addSubview(label)
         
         headerView.backgroundColor = .clear
+        
+//        switch section {
+//        case 1:
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
 
         if section == 1{
             label.text = "Reccommended for You"
@@ -102,28 +123,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.section == 0 {
             let cell = table.dequeueReusableCell(withIdentifier: "walletCell", for: indexPath)
             cell.selectionStyle = .none
-            return cell
+           
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+            cell.layer.shadowOpacity = 0.2
+            cell.layer.shadowOffset = .zero
+            cell.layer.shadowRadius = 5
             
+            return cell
         } else if indexPath.section == 3 {
             let cell = table.dequeueReusableCell(withIdentifier: AllGenreTableViewCell.identifier, for: indexPath ) as! AllGenreTableViewCell
-            
             cell.configure(with: genres)
                 
             return cell
         } else if indexPath.section == 4 {
             let cell = table.dequeueReusableCell(withIdentifier: AllBookTableViewCell.identifier, for: indexPath ) as! AllBookTableViewCell
-            
             cell.configure(with: books)
                 
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath ) as! BookTableViewCell
-            
             cell.configure(with: books)
                 
             return cell
         }
-      
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -140,6 +163,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 }
+
 
 struct Book {
     let bookTitle: String

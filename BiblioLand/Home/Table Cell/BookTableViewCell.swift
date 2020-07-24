@@ -28,7 +28,7 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.register(BookCollectionViewCell.nib(), forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
+        collectionView.register(AllBookCollectionViewCell.nib(), forCellWithReuseIdentifier: AllBookCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -44,13 +44,13 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllBookCollectionViewCell.identifier, for: indexPath) as! AllBookCollectionViewCell
         
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = .zero
-        cell.layer.shadowRadius = 6
+        cell.layer.shadowRadius = 5
         
         cell.configure(with: books[indexPath.row])
         
@@ -58,6 +58,6 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 124, height: 258)
+        return CGSize(width: 119, height: 258)
     }
 }

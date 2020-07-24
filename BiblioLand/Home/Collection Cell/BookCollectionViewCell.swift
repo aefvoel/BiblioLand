@@ -15,6 +15,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var bookPriceLbl: UILabel!
     
+    
     static let identifier = "BookCollectionViewCell"
     static func nib() -> UINib{
         return UINib(nibName: "BookCollectionViewCell", bundle: nil)
