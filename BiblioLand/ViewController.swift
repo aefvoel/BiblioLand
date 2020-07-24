@@ -15,5 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func go(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CheckoutDoneVC") as! CheckoutDoneVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
-
