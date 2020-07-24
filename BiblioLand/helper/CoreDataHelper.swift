@@ -22,6 +22,25 @@ struct CoreDataHelper {
         return context
     }()
     
+    static func insertBook() -> Book {
+            let book = NSEntityDescription.insertNewObject(forEntityName: "Book", into: context) as! Book
+
+            return book
+    }
+    
+    static func retrieveBook() -> [Book] {
+    do {
+        let fetchRequest = NSFetchRequest<Book>(entityName: "Book")
+        let results = try context.fetch(fetchRequest)
+
+        return results
+    } catch let error {
+        print("Could not fetch \(error.localizedDescription)")
+
+        return []
+    }
+    }
+    
     static func newUser() -> User {
             let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
 

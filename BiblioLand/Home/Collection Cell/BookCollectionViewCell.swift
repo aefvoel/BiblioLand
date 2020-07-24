@@ -28,7 +28,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         bgView.layer.cornerRadius = 7.0
     }
 
-    public func configure(with book: Book){
+    public func configure(with book: Books){
         self.bookTitleLbl.text = book.bookTitle
         self.bookPriceLbl.text = book.bookPrice
         self.bookImgView.image = book.bookImg

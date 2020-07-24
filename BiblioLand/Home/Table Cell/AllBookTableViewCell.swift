@@ -18,9 +18,9 @@ class AllBookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var books = [Book]()
+    var books = [Books]()
     
-    func configure(with books: [Book]){
+    func configure(with books: [Books]){
         self.books = books
         collectionView.reloadData()
     }
