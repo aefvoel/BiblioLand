@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABA282A624C7F0C5002719DE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */; };
+		ABA282AB24C7F69E002719DE /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282A724C7F69E002719DE /* Book+CoreDataClass.swift */; };
+		ABA282AC24C7F69E002719DE /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282A824C7F69E002719DE /* Book+CoreDataProperties.swift */; };
+		ABA282AD24C7F69E002719DE /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282A924C7F69E002719DE /* User+CoreDataClass.swift */; };
+		ABA282AE24C7F69E002719DE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA282AA24C7F69E002719DE /* User+CoreDataProperties.swift */; };
 		ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */; };
 		ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */; };
 		ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF3DF824C1421E00B704B7 /* ViewController.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		ABA282A724C7F69E002719DE /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ABA282A824C7F69E002719DE /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		ABA282A924C7F69E002719DE /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ABA282AA24C7F69E002719DE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ABAF3DF124C1421E00B704B7 /* BiblioLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiblioLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABA2829B24C7EF4F002719DE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				ABA282A724C7F69E002719DE /* Book+CoreDataClass.swift */,
+				ABA282A824C7F69E002719DE /* Book+CoreDataProperties.swift */,
+				ABA282A924C7F69E002719DE /* User+CoreDataClass.swift */,
+				ABA282AA24C7F69E002719DE /* User+CoreDataProperties.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		ABA282A424C7F053002719DE /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
 		ABAF3DE824C1421E00B704B7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +87,8 @@
 		ABAF3DF324C1421E00B704B7 /* BiblioLand */ = {
 			isa = PBXGroup;
 			children = (
+				ABA282A424C7F053002719DE /* helper */,
+				ABA2829B24C7EF4F002719DE /* model */,
 				ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */,
 				ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */,
 				ABAF3DF824C1421E00B704B7 /* ViewController.swift */,
@@ -144,7 +175,12 @@
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
+				ABA282A624C7F0C5002719DE /* CoreDataHelper.swift in Sources */,
+				ABA282AB24C7F69E002719DE /* Book+CoreDataClass.swift in Sources */,
+				ABA282AC24C7F69E002719DE /* Book+CoreDataProperties.swift in Sources */,
+				ABA282AD24C7F69E002719DE /* User+CoreDataClass.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
+				ABA282AE24C7F69E002719DE /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
