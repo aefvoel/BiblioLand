@@ -10,7 +10,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="K8V-7h-AKv">
             <objects>
-                <viewController id="bWf-Fk-d01" customClass="OnboardingViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="bWf-Fk-d01" customClass="OnboardingViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pKN-Kc-YRZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +23,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="onBtnNext:" destination="bWf-Fk-d01" eventType="touchUpInside" id="0qn-1h-Ol6"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DJD-ZL-nPi">
                                 <rect key="frame" x="188" y="683" width="39" height="37"/>

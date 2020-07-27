@@ -10,7 +10,7 @@
         <!--Home View Controller-->
         <scene sceneID="k8f-IP-z9f">
             <objects>
-                <viewController id="vuA-LZ-ade" customClass="HomeViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="vuA-LZ-ade" customClass="HomeViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vEr-c2-M7c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

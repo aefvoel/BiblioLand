@@ -17,6 +17,11 @@ class SignInVC: UIViewController {
     }
     
 
+    @IBAction func onBtnSIgnIn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 

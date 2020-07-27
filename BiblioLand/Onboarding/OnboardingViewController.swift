@@ -28,6 +28,11 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         scrollHeight = scrollView.frame.size.height
     }
     
+    @IBAction func onBtnNext(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignInVC") as! SignInVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layoutIfNeeded()

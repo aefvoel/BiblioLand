@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        onStartViewController()
     }
     
-    @IBAction func go(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CheckoutDoneVC") as! CheckoutDoneVC
+    func onStartViewController(){
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
