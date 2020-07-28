@@ -23,6 +23,8 @@ class bookCollection: UICollectionViewCell {
         
         bookImage.layer.cornerRadius = 7.0
         bookImage.clipsToBounds = true
+        
+        shadowDecorate()
     }
 
 }
