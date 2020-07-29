@@ -12,8 +12,18 @@ class BagVC: UIViewController {
     
     @IBOutlet weak var checkoutButton: UIButton!
     @IBOutlet weak var listBag: UITableView!
+    @IBOutlet weak var containerView: UIView!
     
     var dataCheckout = [BookForCheckout]()
+    var state = false
+
+    func checkState() {
+        if dataCheckout.count > 0 {
+            state = true
+        } else {
+            state = false
+        }
+    }
     
     func setUpView() {
         listBag.separatorStyle = .none
@@ -32,23 +42,72 @@ class BagVC: UIViewController {
         super.viewDidLoad()
 
         setUpView()
+        
+        dataCheckout = insertData()
+        
+        checkState()
+        
         listBag.delegate = self
         listBag.dataSource = self
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        listBag.reloadData()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        if state == false {
+            containerView.isHidden = state
+            checkoutButton.isEnabled = state
+            checkoutButton.backgroundColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
+        } else {
+            containerView.isHidden = state
+            listBag.reloadData()
+        }
+    }
+    
+    @IBAction func goPay(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Checkout") as! CheckoutVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension BagVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        if state == false {
+            return 1
+        } else {
+            if section > (dataCheckout.count - 1) {
+                return 1
+            } else {
+                return dataCheckout[section].booksData?.count ?? 0
+            }
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataCheckout.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if state == false {
+            return ""
+        } else {
+            if section > (dataCheckout.count - 1) {
+                return "\(dataCheckout[0].borrowers!.boorowersName)'s other books"
+            } else {
+                return dataCheckout[section].borrowers?.boorowersName
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        if indexPath.section > (dataCheckout.count - 1) {
+            guard let cell = listBag.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ComponentListCell else {
+                   do {fatalError("Unable to create component list table")}
+               }
+            cell.booksData = insertBook()
+           return cell
+        } else {
             guard let cell2 = listBag.dequeueReusableCell(withIdentifier: "BookCheckout", for: indexPath) as? BookCheckout else {
                 do {fatalError("Unable to create component")}
             }
@@ -64,25 +123,21 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
             cell2.containerView.layer.cornerRadius = 7.0
             cell2.containerView.layer.masksToBounds = false
             
-            cell2.bookImage.image = UIImage(named: "Book2")
-            cell2.pricing.text = "Price: Rp2.000/day"
-            cell2.deposit.text = "Deposit: Rp9.000"
-            cell2.booksTitle.text = "The King of Drugs"
+            cell2.bookImage.image = dataCheckout[indexPath.section].booksData?[indexPath.row].bookImage
+            cell2.pricing.text = dataCheckout[indexPath.section].booksData?[indexPath.row].pricing
+            cell2.deposit.text = dataCheckout[indexPath.section].booksData?[indexPath.row].deposit
+            cell2.booksTitle.text = dataCheckout[indexPath.section].booksData?[indexPath.row].bookTitle
+            cell2.borrowerNAme.text = dataCheckout[indexPath.section].borrowers?.boorowersName
             
             return cell2
-        } else {
-            guard let cell = listBag.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ComponentListCell else {
-                do {fatalError("Unable to create component list table")}
-            }
-            return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 130
-        } else {
+        if indexPath.section > (dataCheckout.count - 1) {
             return 320
+        } else {
+            return 130
         }
     }
 }
