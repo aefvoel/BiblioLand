@@ -31,7 +31,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func onBtnNext(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SignInVC") as! SignInVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
