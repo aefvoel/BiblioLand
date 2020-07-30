@@ -271,7 +271,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		ABA2829B24C7EF4F002719DE /* model */ = {
+		ABA2829B24C7EF4F002719DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */,
@@ -279,15 +279,15 @@
 				AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */,
 				AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */,
 			);
-			path = model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		ABA282A424C7F053002719DE /* helper */ = {
+		ABA282A424C7F053002719DE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */,
 			);
-			path = helper;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		ABAF3DE824C1421E00B704B7 = {
@@ -313,8 +313,8 @@
 				AB61970524D153340092EB8B /* CurrentBorrowing */,
 				D73CFDA424C7E200001367D9 /* Home */,
 				E6BF0CF124C7E1F1008706A9 /* Onboarding */,
-				ABA282A424C7F053002719DE /* helper */,
-				ABA2829B24C7EF4F002719DE /* model */,
+				ABA282A424C7F053002719DE /* Helper */,
+				ABA2829B24C7EF4F002719DE /* Model */,
 				42CC89D624CA2444006E6DCD /* BiblioLand.entitlements */,
 				42CC89D324CA1D38006E6DCD /* Authentication */,
 				42CC89B524CA06DE006E6DCD /* Extension */,
