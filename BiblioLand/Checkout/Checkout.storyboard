@@ -11,7 +11,7 @@
         <!--CheckoutVC-->
         <scene sceneID="hQR-B1-pX7">
             <objects>
-                <viewController id="hFG-6R-kd0" customClass="CheckoutVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Checkout" id="hFG-6R-kd0" customClass="CheckoutVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vRh-x0-3J7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,9 +11,13 @@ import UIKit
 class ComponentListCell: UITableViewCell {
 
     @IBOutlet weak var bookRecommendation: UICollectionView!
+    var booksData = [books]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        booksData = insertBook()
+        
         bookRecommendation.dataSource = self
         bookRecommendation.delegate = self
         
@@ -25,29 +29,23 @@ class ComponentListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
 
 extension ComponentListCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return booksData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookCollection", for: indexPath) as! bookCollection
         
-        cell.bookImage.image = UIImage(named: "Book2")
-        cell.bookTitle.text = "How To Trains You"
-        cell.pricingBook.text = "Rp10.000"
+        cell.bookImage.image = booksData[indexPath.row].bookImage
+        cell.bookTitle.text = booksData[indexPath.row].bookTitle
+        cell.pricingBook.text = booksData[indexPath.row].pricing
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
