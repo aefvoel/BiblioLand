@@ -20,10 +20,10 @@ class Borrowers {
 class books {
     var bookImage: UIImage?
     var bookTitle: String?
-    var pricing: String?
-    var deposit: String?
+    var pricing: Int?
+    var deposit: Int?
     
-    init(bookImage: UIImage, bookTitle: String, pricing: String, deposit: String) {
+    init(bookImage: UIImage, bookTitle: String, pricing: Int, deposit: Int) {
         self.bookImage = bookImage
         self.bookTitle = bookTitle
         self.pricing = pricing

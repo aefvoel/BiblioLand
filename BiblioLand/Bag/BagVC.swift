@@ -36,6 +36,9 @@ class BagVC: UIViewController {
         self.navigationController?.navigationItem.backBarButtonItem?.title = ""
         self.navigationController?.navigationBar.barTintColor = .white
         checkoutButton.greenButton()
+        
+        let nibCell = UINib(nibName: "TableViewCell", bundle: nil)
+        listBag.register(nibCell, forCellReuseIdentifier: "BookCheckout")
     }
     
     override func viewDidLoad() {
@@ -51,7 +54,7 @@ class BagVC: UIViewController {
         listBag.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func isNoCart() {
         if state == false {
             containerView.isHidden = state
             checkoutButton.isEnabled = state
@@ -62,14 +65,67 @@ class BagVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        isNoCart()
+    }
+    
+    func openTapped() {
+        let ac = UIAlertController(title: "Choose books you want to borrow", message: nil, preferredStyle: .actionSheet)
+        for data in dataCheckout {
+            ac.addAction(UIAlertAction(title: data.borrowers?.boorowersName, style: .default, handler: {
+                (alert: UIAlertAction!) in
+                    let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "Checkout") as! CheckoutVC
+                    vc.data = data.booksData!
+                    self.navigationController?.pushViewController(vc, animated: true)
+            }))
+        }
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        present(ac, animated: true)
+    }
+    
     @IBAction func goPay(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "Checkout") as! CheckoutVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if dataCheckout.count == 1 {
+            let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "Checkout") as! CheckoutVC
+            vc.data = dataCheckout[0].booksData!
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            openTapped()
+        }
     }
 }
 
 extension BagVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        headerView.backgroundColor = .white
+
+        var data = ""
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+
+        if (section == (dataCheckout.count) && (dataCheckout.count > 0)) {
+            data = "\(dataCheckout[0].borrowers!.boorowersName)'s other books"
+        } else if (dataCheckout.count > 0) {
+            data = "Borrow From \(dataCheckout[section].borrowers!.boorowersName)"
+        }
+
+        label.text = data
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.textColor = UIColor.black
+
+        headerView.addSubview(label)
+
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if state == false {
@@ -91,10 +147,10 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
         if state == false {
             return ""
         } else {
-            if section > (dataCheckout.count - 1) {
+            if section == (dataCheckout.count) {
                 return "\(dataCheckout[0].borrowers!.boorowersName)'s other books"
             } else {
-                return dataCheckout[section].borrowers?.boorowersName
+                return "Borrow From \(dataCheckout[section].borrowers!.boorowersName)"
             }
         }
     }
@@ -112,22 +168,17 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
                 do {fatalError("Unable to create component")}
             }
             
-            let radius: CGFloat = 7.0
-            cell2.containerView.layer.shadowColor = UIColor.black.cgColor
-            cell2.containerView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-            cell2.containerView.layer.shadowRadius = 4.0
-            cell2.containerView.layer.shadowOpacity = 0.2
-            cell2.containerView.layer.masksToBounds = false
-            cell2.containerView.layer.cornerRadius = radius
-            
-            cell2.containerView.layer.cornerRadius = 7.0
-            cell2.containerView.layer.masksToBounds = false
+            let price = idrFormat(harga: dataCheckout[indexPath.section].booksData![indexPath.row].pricing!)
+            let deposit = idrFormat(harga: dataCheckout[indexPath.section].booksData![indexPath.row].deposit!)
             
             cell2.bookImage.image = dataCheckout[indexPath.section].booksData?[indexPath.row].bookImage
-            cell2.pricing.text = dataCheckout[indexPath.section].booksData?[indexPath.row].pricing
-            cell2.deposit.text = dataCheckout[indexPath.section].booksData?[indexPath.row].deposit
+            cell2.pricing.text = "Price: Rp\(price)"
+            cell2.deposit.text = "Book Deposit: Rp\(deposit)"
             cell2.booksTitle.text = dataCheckout[indexPath.section].booksData?[indexPath.row].bookTitle
-            cell2.borrowerNAme.text = dataCheckout[indexPath.section].borrowers?.boorowersName
+            
+            cell2.delegate = self
+            cell2.rows = indexPath.row
+            cell2.section = indexPath.section
             
             return cell2
         }
@@ -137,7 +188,32 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section > (dataCheckout.count - 1) {
             return 320
         } else {
-            return 130
+            if (dataCheckout[indexPath.section].booksData!.count) > 1 {
+                return 100
+            } else {
+                return 120
+            }
+        }
+    }
+}
+
+extension BagVC: CellDelegate {
+    func DeleteBooks(_ bookCheckout: BookCheckout, booksYouWantDelete section: Int, row: Int) {
+        if dataCheckout[section].booksData?.count == 1 {
+            dataCheckout[section].booksData?.remove(at: row)
+            dataCheckout.remove(at: section)
+        } else {
+            dataCheckout[section].booksData?.remove(at: row)
+        }
+        
+        print(dataCheckout.count)
+        
+        if dataCheckout.count > 0 {
+            listBag.reloadData()
+        } else {
+            listBag.reloadData()
+            state = false
+            self.viewDidLoad()
         }
     }
 }

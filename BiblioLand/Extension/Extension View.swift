@@ -23,3 +23,13 @@ extension UIView {
         layer.masksToBounds = false
     }
 }
+
+func idrFormat(harga: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.locale = Locale(identifier: "id_ID")
+    formatter.groupingSeparator = "."
+    formatter.numberStyle = .decimal
+    let formattedTipAmount = formatter.string(from: harga as NSNumber)
+    
+    return formattedTipAmount!
+}

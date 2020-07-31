@@ -38,6 +38,8 @@
 		42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89D924CA25CE006E6DCD /* SignInVC.swift */; };
 		42CC89DC24CA2A38006E6DCD /* ChecloutDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89DB24CA2A38006E6DCD /* ChecloutDoneVC.swift */; };
 		42CC89DE24CA2F40006E6DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CC89DD24CA2F40006E6DCD /* Main.storyboard */; };
+		42DBD88B24D3FDD5006AF723 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DBD88924D3FDD5006AF723 /* TableViewCell.xib */; };
+		42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBD88C24D480DF006AF723 /* Extension Date.swift */; };
 		42E85B3124C9D2B2009C4A7E /* Bag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E85B3024C9D2B2009C4A7E /* Bag.storyboard */; };
 		AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */; };
 		AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */; };
@@ -105,6 +107,8 @@
 		42CC89D924CA25CE006E6DCD /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		42CC89DB24CA2A38006E6DCD /* ChecloutDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecloutDoneVC.swift; sourceTree = "<group>"; };
 		42CC89DD24CA2F40006E6DCD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		42DBD88924D3FDD5006AF723 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		42DBD88C24D480DF006AF723 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = "<group>"; };
 		42E85B3024C9D2B2009C4A7E /* Bag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bag.storyboard; sourceTree = "<group>"; };
 		AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -158,6 +162,7 @@
 				420147B524C9E338007C7693 /* bookCollection.swift */,
 				420147B624C9E338007C7693 /* bookCollection.xib */,
 				420147BB24CA001C007C7693 /* BookCheckout.swift */,
+				42DBD88924D3FDD5006AF723 /* TableViewCell.xib */,
 			);
 			path = "Cell Component";
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				42CC89B624CA06F8006E6DCD /* Extention Button.swift */,
 				42CC89B824CA091E006E6DCD /* Extension View.swift */,
 				4228DF9F24CEDE99003E82E2 /* Extension Collection Cell.swift */,
+				42DBD88C24D480DF006AF723 /* Extension Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				D76F046124C73FC400EC3999 /* AllBookTableViewCell.xib in Resources */,
 				D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */,
 				ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */,
+				42DBD88B24D3FDD5006AF723 /* TableViewCell.xib in Resources */,
 				D75DB6F124C6D51B00263F03 /* BookCollectionViewCell.xib in Resources */,
 				E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */,
 				42CC89CE24CA0B9F006E6DCD /* TotalPay.xib in Resources */,
@@ -462,6 +469,7 @@
 				426A417B24CE9A63007633CF /* ComponentListCell.swift in Sources */,
 				42CC89D824CA25BC006E6DCD /* SignUpVC.swift in Sources */,
 				42CC89C524CA0B60006E6DCD /* BooksLocation.swift in Sources */,
+				42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */,
 				42CC89B924CA091E006E6DCD /* Extension View.swift in Sources */,
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,

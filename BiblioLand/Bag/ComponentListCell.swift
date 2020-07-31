@@ -41,9 +41,10 @@ extension ComponentListCell: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookCollection", for: indexPath) as! bookCollection
         
+        let price = idrFormat(harga: booksData[indexPath.row].pricing!)
         cell.bookImage.image = booksData[indexPath.row].bookImage
         cell.bookTitle.text = booksData[indexPath.row].bookTitle
-        cell.pricingBook.text = booksData[indexPath.row].pricing
+        cell.pricingBook.text = "Rp\(price)/day"
         
         return cell
     }
