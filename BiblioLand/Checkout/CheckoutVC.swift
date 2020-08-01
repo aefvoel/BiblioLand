@@ -59,6 +59,12 @@ class CheckoutVC: UIViewController {
         listCheckout.delegate = self
         listCheckout.dataSource = self
     }
+    
+    @IBAction func payProcess(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
@@ -72,7 +78,6 @@ extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
         let booksCount = data.count
 
         if indexPath.row < booksCount {
-            print("Install book")
             guard let cell = listCheckout.dequeueReusableCell(withIdentifier: "BorrowBooksCell", for: indexPath) as? BorrowBooksCell else {
                 do {fatalError("Unable to create component")}
             }

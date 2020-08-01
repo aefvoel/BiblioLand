@@ -16,6 +16,7 @@
 		426A417B24CE9A63007633CF /* ComponentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426A417A24CE9A63007633CF /* ComponentListCell.swift */; };
 		427FA17124C198C2008E3D40 /* BooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17024C198C2008E3D40 /* BooksData.swift */; };
 		427FA17324C19C02008E3D40 /* OtherBooksReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17224C19C02008E3D40 /* OtherBooksReference.swift */; };
+		429D95A124D55F9A00A39278 /* MapsViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D95A024D55F9A00A39278 /* MapsViewVC.swift */; };
 		42A6AD2324CFE180001B3706 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A6AD2224CFE180001B3706 /* Book.swift */; };
 		42AF9EBF24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF9EBE24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift */; };
 		42CC89B424CA06CF006E6DCD /* BagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89B324CA06CF006E6DCD /* BagVC.swift */; };
@@ -36,7 +37,7 @@
 		42CC89D524CA1DC2006E6DCD /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CC89D424CA1DC2006E6DCD /* Authentication.storyboard */; };
 		42CC89D824CA25BC006E6DCD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89D724CA25BC006E6DCD /* SignUpVC.swift */; };
 		42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89D924CA25CE006E6DCD /* SignInVC.swift */; };
-		42CC89DC24CA2A38006E6DCD /* ChecloutDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89DB24CA2A38006E6DCD /* ChecloutDoneVC.swift */; };
+		42CC89DC24CA2A38006E6DCD /* CheckoutDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89DB24CA2A38006E6DCD /* CheckoutDoneVC.swift */; };
 		42CC89DE24CA2F40006E6DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CC89DD24CA2F40006E6DCD /* Main.storyboard */; };
 		42DBD88B24D3FDD5006AF723 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DBD88924D3FDD5006AF723 /* TableViewCell.xib */; };
 		42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBD88C24D480DF006AF723 /* Extension Date.swift */; };
@@ -84,6 +85,7 @@
 		426A417A24CE9A63007633CF /* ComponentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComponentListCell.swift; path = BiblioLand/Bag/ComponentListCell.swift; sourceTree = SOURCE_ROOT; };
 		427FA17024C198C2008E3D40 /* BooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksData.swift; sourceTree = "<group>"; };
 		427FA17224C19C02008E3D40 /* OtherBooksReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBooksReference.swift; sourceTree = "<group>"; };
+		429D95A024D55F9A00A39278 /* MapsViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewVC.swift; sourceTree = "<group>"; };
 		42A6AD2224CFE180001B3706 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		42AF9EBE24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperGetBorrowerBooks.swift; sourceTree = "<group>"; };
 		42CC89B324CA06CF006E6DCD /* BagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagVC.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		42CC89D624CA2444006E6DCD /* BiblioLand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BiblioLand.entitlements; sourceTree = "<group>"; };
 		42CC89D724CA25BC006E6DCD /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		42CC89D924CA25CE006E6DCD /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		42CC89DB24CA2A38006E6DCD /* ChecloutDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecloutDoneVC.swift; sourceTree = "<group>"; };
+		42CC89DB24CA2A38006E6DCD /* CheckoutDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDoneVC.swift; sourceTree = "<group>"; };
 		42CC89DD24CA2F40006E6DCD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42DBD88924D3FDD5006AF723 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		42DBD88C24D480DF006AF723 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = "<group>"; };
@@ -214,7 +216,8 @@
 				42CC89BA24CA0A9D006E6DCD /* Cell Component */,
 				42CC89CF24CA0BAD006E6DCD /* Checkout.storyboard */,
 				42CC89D124CA0C83006E6DCD /* CheckoutVC.swift */,
-				42CC89DB24CA2A38006E6DCD /* ChecloutDoneVC.swift */,
+				42CC89DB24CA2A38006E6DCD /* CheckoutDoneVC.swift */,
+				429D95A024D55F9A00A39278 /* MapsViewVC.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -464,13 +467,14 @@
 				425C957F24C1ABE000E807A1 /* ButtonDoProccess.swift in Sources */,
 				42CC89C924CA0B85006E6DCD /* PaymentMethod.swift in Sources */,
 				42CC89B424CA06CF006E6DCD /* BagVC.swift in Sources */,
-				42CC89DC24CA2A38006E6DCD /* ChecloutDoneVC.swift in Sources */,
+				42CC89DC24CA2A38006E6DCD /* CheckoutDoneVC.swift in Sources */,
 				427FA17124C198C2008E3D40 /* BooksData.swift in Sources */,
 				426A417B24CE9A63007633CF /* ComponentListCell.swift in Sources */,
 				42CC89D824CA25BC006E6DCD /* SignUpVC.swift in Sources */,
 				42CC89C524CA0B60006E6DCD /* BooksLocation.swift in Sources */,
 				42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */,
 				42CC89B924CA091E006E6DCD /* Extension View.swift in Sources */,
+				429D95A124D55F9A00A39278 /* MapsViewVC.swift in Sources */,
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
@@ -635,7 +639,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -656,7 +661,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;

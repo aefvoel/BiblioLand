@@ -61,8 +61,8 @@
                         <rect key="frame" x="20" y="41" width="337" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vanya Park, Tanggerang (~3 km)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5T-7z-GKh">
-                                <rect key="frame" x="8" y="126" width="207" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BSD Green Office Park, Tanggerang (~3 km)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5T-7z-GKh">
+                                <rect key="frame" x="8" y="126" width="321" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
@@ -102,6 +102,8 @@
             <connections>
                 <outlet property="deliveryCost" destination="w9l-D1-Gay" id="Po0-2m-ZYe"/>
                 <outlet property="deliveryMethod" destination="Zz8-w1-GfO" id="F9X-rV-VAe"/>
+                <outlet property="locationLavel" destination="O5T-7z-GKh" id="7Gc-cX-EoX"/>
+                <outlet property="mapView" destination="aJn-vt-tUS" id="ccF-EF-tVV"/>
                 <outlet property="pickupTime" destination="gQM-Ic-7hY" id="U67-Zf-shr"/>
             </connections>
             <point key="canvasLocation" x="136.95652173913044" y="152.34375"/>
