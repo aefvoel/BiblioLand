@@ -10,15 +10,24 @@ import UIKit
 
 class BookBorrowing: UITableViewCell {
 
+    @IBOutlet weak var booksTitle: UILabel!
+    @IBOutlet weak var borrowerNAme: UILabel!
+    @IBOutlet weak var bookAuthor: UILabel!
+    @IBOutlet weak var dueDate: UILabel!
+    @IBOutlet weak var bookImage: UIImageView! {
+        didSet {
+            bookImage.layer.cornerRadius = 7.0
+            bookImage.clipsToBounds = true
+        }
+    }
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

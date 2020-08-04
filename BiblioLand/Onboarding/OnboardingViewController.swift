@@ -31,7 +31,16 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func onBtnNext(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SignInVC") as! SignInVC
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

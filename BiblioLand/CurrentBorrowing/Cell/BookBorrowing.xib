@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentViewController" customModule="BiblioLand" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="BookBorrowing" customModule="BiblioLand" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="360" height="118"/>
@@ -96,6 +96,13 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bookAuthor" destination="DZQ-pB-2zb" id="hvZ-CI-bU5"/>
+                <outlet property="bookImage" destination="l1l-LQ-Ztr" id="o6X-ck-Hhb"/>
+                <outlet property="booksTitle" destination="q4b-r6-t0z" id="v3C-48-H9N"/>
+                <outlet property="borrowerNAme" destination="ntY-SN-QNz" id="ZHN-FE-egJ"/>
+                <outlet property="dueDate" destination="0rd-Iy-wu5" id="PhX-rI-l2D"/>
+            </connections>
             <point key="canvasLocation" x="166.66666666666669" y="177.45535714285714"/>
         </tableViewCell>
     </objects>

@@ -9,7 +9,6 @@
 import UIKit
 
 class CurrentViewController: UIViewController {
-
     @IBOutlet weak var listCurrentBook: UITableView!
     var dataCheckout = [BookForCheckout]()
 
@@ -34,6 +33,9 @@ class CurrentViewController: UIViewController {
         
         listCurrentBook.delegate = self
         listCurrentBook.dataSource = self
+        
+//        tableView.register(UINib(nibName: "BookBorrowing", bundle: nil), forCellReuseIdentifier: "BookBorrowing")
+
     }
 
 
@@ -58,18 +60,15 @@ extension CurrentViewController: UITableViewDelegate, UITableViewDataSource {
         return dataCheckout.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataCheckout[section].borrowers?.boorowersName
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-            guard let cell2 = listCurrentBook.dequeueReusableCell(withIdentifier: "BookCheckout", for: indexPath) as? BookCheckout else {
+            guard let cell2 = listCurrentBook.dequeueReusableCell(withIdentifier: "BookBorrowing", for: indexPath) as? BookBorrowing else {
                 do {fatalError("Unable to create component")}
             }
             
             let radius: CGFloat = 7.0
+        
             cell2.containerView.layer.shadowColor = UIColor.black.cgColor
             cell2.containerView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
             cell2.containerView.layer.shadowRadius = 4.0
@@ -81,8 +80,6 @@ extension CurrentViewController: UITableViewDelegate, UITableViewDataSource {
             cell2.containerView.layer.masksToBounds = false
             
             cell2.bookImage.image = dataCheckout[indexPath.section].booksData?[indexPath.row].bookImage
-            cell2.pricing.text = dataCheckout[indexPath.section].booksData?[indexPath.row].pricing
-            cell2.deposit.text = dataCheckout[indexPath.section].booksData?[indexPath.row].deposit
             cell2.booksTitle.text = dataCheckout[indexPath.section].booksData?[indexPath.row].bookTitle
             cell2.borrowerNAme.text = dataCheckout[indexPath.section].borrowers?.boorowersName
             
