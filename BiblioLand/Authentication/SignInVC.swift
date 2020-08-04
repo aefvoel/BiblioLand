@@ -18,9 +18,17 @@ class SignInVC: UIViewController {
     
 
     @IBAction func onBtnSIgnIn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! UITabBarController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     /*
     // MARK: - Navigation

@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        onStartViewController()
+//        onStartViewController()
+        self.navigationController?.navigationItem.hidesBackButton = true
     }
     
     
@@ -24,9 +25,9 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func onStartViewController(){
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    func onStartViewController(){
+//        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
 }
