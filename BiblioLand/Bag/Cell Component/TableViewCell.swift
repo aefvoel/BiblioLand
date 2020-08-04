@@ -1,21 +1,18 @@
 //
-//  TotalPay.swift
+//  TableViewCell.swift
 //  BiblioLand
 //
-//  Created by Dicky Geraldi on 24/07/20.
+//  Created by Dicky Geraldi on 31/07/20.
 //  Copyright © 2020 Toriq Wahid Syaefullah. All rights reserved.
 //
 
 import UIKit
 
-class TotalPay: UITableViewCell {
+class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var totalPay: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        shadowDecorate()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

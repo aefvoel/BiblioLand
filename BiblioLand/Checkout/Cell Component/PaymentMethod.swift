@@ -10,15 +10,47 @@ import UIKit
 
 class PaymentMethod: UITableViewCell {
 
+    var paymentMethod = ["Biblio Walet", "COD"]
+    
+    @IBOutlet weak var choosePayment: UITextField!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        shadowDecorate()
+        createPickerView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func createPickerView() {
+       let pickerView = UIPickerView()
+       pickerView.delegate = self
+       choosePayment.inputView = pickerView
+    }
+    
+    @objc func doneEdit() {
+        self.endEditing(true)
+    }
+    
+}
+
+extension PaymentMethod: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return paymentMethod.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return paymentMethod[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        choosePayment.text = paymentMethod[row]
+    }
 }

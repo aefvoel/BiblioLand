@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="247" id="KGk-i7-Jjw" customClass="BorrowBooksCell" customModule="BiblioLand" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BorrowBooksCell" rowHeight="247" id="KGk-i7-Jjw" customClass="BorrowBooksCell" customModule="BiblioLand" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="181"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -69,7 +69,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rp20.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-WA-jgt">
-                        <rect key="frame" x="228" y="130" width="126" height="20"/>
+                        <rect key="frame" x="198" y="130" width="156" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
@@ -79,7 +79,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rp1.000/day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMf-Ph-63N">
-                        <rect key="frame" x="261" y="104" width="93" height="18"/>
+                        <rect key="frame" x="186" y="104" width="168" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
@@ -91,6 +91,14 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bookDeposit" destination="e6l-WA-jgt" id="Vsc-K4-wf8"/>
+                <outlet property="bookImage" destination="VRg-sB-IQP" id="LVH-LA-Jtr"/>
+                <outlet property="bookPrice" destination="mMf-Ph-63N" id="Hny-O4-qSG"/>
+                <outlet property="bookTitle" destination="jU8-Zf-BT0" id="OOp-kT-VUA"/>
+                <outlet property="booksBorrowers" destination="bkH-GE-4EJ" id="ES8-G7-m64"/>
+                <outlet property="booksCreator" destination="1vR-Vu-gPR" id="dWU-TJ-oKI"/>
+            </connections>
             <point key="canvasLocation" x="314.49275362318843" y="220.64732142857142"/>
         </tableViewCell>
     </objects>
