@@ -128,6 +128,7 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
 
 }
+
 struct BookInfo{
     let bookTitle: String
     let bookAuthor: String

@@ -59,12 +59,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         genres.append(Genre(genreName: "Romance"))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavbar()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavbar()
-
         table.register(BookTableViewCell.nib(), forCellReuseIdentifier: BookTableViewCell.identifier)
         table.register(AllBookTableViewCell.nib(), forCellReuseIdentifier: AllBookTableViewCell.identifier)
         table.register(AllGenreTableViewCell.nib(), forCellReuseIdentifier: AllGenreTableViewCell.identifier)
