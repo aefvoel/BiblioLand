@@ -99,6 +99,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="37Q-Sc-sT9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="goToCart:" destination="vuA-LZ-ade" id="gbY-jL-bT1"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

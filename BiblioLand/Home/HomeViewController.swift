@@ -35,7 +35,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.navigationBar.barTintColor = greenColor
     }
-    
+    @IBAction func goToCart(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Bag", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as! BagVC
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func insertData(){
         books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
         books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))

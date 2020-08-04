@@ -18,12 +18,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func goToCart(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Bag", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as! BagVC
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+    
     
 //    func onStartViewController(){
 //        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)

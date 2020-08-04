@@ -20,7 +20,11 @@ class SignInVC: UIViewController {
     @IBAction func onBtnSIgnIn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! UITabBarController
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let window = self.view.window
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
