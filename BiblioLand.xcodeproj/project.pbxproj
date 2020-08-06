@@ -64,6 +64,11 @@
 		D76F046524C746D000EC3999 /* AllGenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F046324C746D000EC3999 /* AllGenreCollectionViewCell.xib */; };
 		D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */; };
 		D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */; };
+		E60EEC7524D9013B00FD179B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EEC7424D9013B00FD179B /* Signup.storyboard */; };
+		E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7624D9017A00FD179B /* SignUpViewController.swift */; };
+		E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7824D90AA600FD179B /* SignupButton.swift */; };
+		E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7A24D90AB400FD179B /* CustomTextView.swift */; };
+		E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7C24DA54A000FD179B /* SignInViewController.swift */; };
 		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
 		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
 		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
@@ -130,6 +135,11 @@
 		D76F046324C746D000EC3999 /* AllGenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGenreTableViewCell.swift; sourceTree = "<group>"; };
 		D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGenreTableViewCell.xib; sourceTree = "<group>"; };
+		E60EEC7424D9013B00FD179B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		E60EEC7624D9017A00FD179B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E60EEC7824D90AA600FD179B /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
+		E60EEC7A24D90AB400FD179B /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		E60EEC7C24DA54A000FD179B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
@@ -265,6 +275,7 @@
 		ABAF3DF324C1421E00B704B7 /* BiblioLand */ = {
 			isa = PBXGroup;
 			children = (
+				E60EEC7324D900F500FD179B /* SignUp */,
 				D73CFDA424C7E200001367D9 /* Home */,
 				E6BF0CF124C7E1F1008706A9 /* Onboarding */,
 				ABA282A424C7F053002719DE /* helper */,
@@ -323,6 +334,18 @@
 				D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */,
 			);
 			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		E60EEC7324D900F500FD179B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E60EEC7424D9013B00FD179B /* Signup.storyboard */,
+				E60EEC7C24DA54A000FD179B /* SignInViewController.swift */,
+				E60EEC7624D9017A00FD179B /* SignUpViewController.swift */,
+				E60EEC7824D90AA600FD179B /* SignupButton.swift */,
+				E60EEC7A24D90AB400FD179B /* CustomTextView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		E6BF0CF124C7E1F1008706A9 /* Onboarding */ = {
@@ -409,6 +432,7 @@
 				D76F046124C73FC400EC3999 /* AllBookTableViewCell.xib in Resources */,
 				D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */,
 				ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */,
+				E60EEC7524D9013B00FD179B /* Signup.storyboard in Resources */,
 				D75DB6F124C6D51B00263F03 /* BookCollectionViewCell.xib in Resources */,
 				E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */,
 				42CC89CE24CA0B9F006E6DCD /* TotalPay.xib in Resources */,
@@ -440,20 +464,24 @@
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
 				D73CFDAC24C95C32001367D9 /* Maps.swift in Sources */,
+				E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */,
 				D73CFDA824C95C16001367D9 /* SearchBookTableViewController.swift in Sources */,
 				D76F046024C73FC400EC3999 /* AllBookTableViewCell.swift in Sources */,
 				AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */,
 				420147B724C9E338007C7693 /* bookCollection.swift in Sources */,
 				42CC89B724CA06F8006E6DCD /* Extention Button.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
+				E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */,
 				D75DB6F024C6D51B00263F03 /* BookCollectionViewCell.swift in Sources */,
 				AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */,
 				D75DB6EC24C6D50700263F03 /* BookTableViewCell.swift in Sources */,
 				D73CFDAA24C95C27001367D9 /* SearchLocationTableViewController.swift in Sources */,
 				D76F045A24C73F9900EC3999 /* AllBookCollectionViewCell.swift in Sources */,
+				E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */,
 				AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */,
 				D75DB6F324C6D6FC00263F03 /* HomeViewController.swift in Sources */,
 				D76F046424C746D000EC3999 /* AllGenreCollectionViewCell.swift in Sources */,
+				E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */,
 				E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */,
 				E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
