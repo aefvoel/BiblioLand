@@ -16,14 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-PT-4GV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icv-xF-XBb">
+                                <rect key="frame" x="20" y="798" width="374" height="50"/>
+                                <color key="backgroundColor" name="Hijau"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="6QO-fA-Pvb"/>
+                                    <constraint firstAttribute="height" constant="50" id="bqj-a8-hgP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Pay">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="payProcess:" destination="hFG-6R-kd0" eventType="touchUpInside" id="YH0-EI-V9D"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-PT-4GV">
                                 <rect key="frame" x="20" y="48" width="374" height="742"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="869-UN-n1W"/>
+                                    <constraint firstAttribute="height" constant="742" id="lyy-Gu-3XW"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BorrowBooksCell" id="bOX-jM-Qnh">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOX-jM-Qnh" id="W0x-Ij-dRB">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -63,20 +81,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icv-xF-XBb">
-                                <rect key="frame" x="20" y="798" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Hijau"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Pay">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="payProcess:" destination="hFG-6R-kd0" eventType="touchUpInside" id="YH0-EI-V9D"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TlV-s9-OtY" firstAttribute="trailing" secondItem="Icv-xF-XBb" secondAttribute="trailing" constant="20" id="1Ud-UH-SL2"/>
+                            <constraint firstItem="PKz-PT-4GV" firstAttribute="leading" secondItem="TlV-s9-OtY" secondAttribute="leading" constant="20" id="4J7-Wj-qh2"/>
+                            <constraint firstItem="TlV-s9-OtY" firstAttribute="bottom" secondItem="Icv-xF-XBb" secondAttribute="bottom" constant="14" id="PBX-zf-h9e"/>
+                            <constraint firstItem="PKz-PT-4GV" firstAttribute="top" secondItem="TlV-s9-OtY" secondAttribute="top" constant="4" id="PR2-7j-HHN"/>
+                            <constraint firstItem="Icv-xF-XBb" firstAttribute="top" secondItem="PKz-PT-4GV" secondAttribute="bottom" constant="8" id="SBJ-KJ-w8e"/>
+                            <constraint firstItem="Icv-xF-XBb" firstAttribute="leading" secondItem="TlV-s9-OtY" secondAttribute="leading" constant="20" id="hnH-9c-eqd"/>
+                            <constraint firstItem="TlV-s9-OtY" firstAttribute="trailing" secondItem="PKz-PT-4GV" secondAttribute="trailing" constant="20" id="ndY-cd-4Dm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TlV-s9-OtY"/>
                     </view>
                     <connections>

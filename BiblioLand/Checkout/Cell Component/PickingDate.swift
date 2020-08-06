@@ -54,7 +54,7 @@ class PickingDate: UITableViewCell {
 }
 
 extension PickingDate {
-
+    
     @objc func startPickerChange() {
         getDateFromPicker(sender: startPicker)
         checkingIsFilled()
@@ -79,6 +79,7 @@ extension PickingDate {
             }
             
             totalToPay.text = "Rp\(idrFormat(harga: sumAmount))"
+            
         }
     }
     
@@ -88,9 +89,11 @@ extension PickingDate {
                 
         if sender == startPicker {
             startDatePick.text = formatter.string(from: startPicker.date)
+            
             endPicker.minimumDate = startPicker.date
         } else {
             endDatePick.text = formatter.string(from: endPicker.date)
+
             startPicker.maximumDate = endPicker.date
         }
     }

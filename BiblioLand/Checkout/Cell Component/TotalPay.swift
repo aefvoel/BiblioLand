@@ -11,11 +11,15 @@ import UIKit
 class TotalPay: UITableViewCell {
 
     @IBOutlet weak var totalPay: UILabel!
-    
+            
     override func awakeFromNib() {
         super.awakeFromNib()
         
         shadowDecorate()
+    }
+    
+    func updateTotalPay(data: String) {
+        totalPay.text = data
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +27,4 @@ class TotalPay: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

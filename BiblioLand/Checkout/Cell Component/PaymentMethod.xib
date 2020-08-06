@@ -16,16 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfA-dn-BwY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfA-dn-BwY">
                         <rect key="frame" x="12" y="15" width="117" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="RyQ-l4-T2t"/>
+                            <constraint firstAttribute="width" constant="117" id="UDB-uv-np1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Payment Method" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDt-yV-6q8">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Payment Method" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDt-yV-6q8">
                         <rect key="frame" x="182" y="8" width="180" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="XtC-AH-8bI"/>
+                            <constraint firstAttribute="width" constant="180" id="xqn-B5-9Qz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <textInputTraits key="textInputTraits"/>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -33,6 +39,15 @@
                         </variation>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="KDt-yV-6q8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="V62-Mn-7Q9"/>
+                    <constraint firstAttribute="trailing" secondItem="KDt-yV-6q8" secondAttribute="trailing" constant="11" id="Vpp-Qm-ux9"/>
+                    <constraint firstAttribute="bottom" secondItem="KDt-yV-6q8" secondAttribute="bottom" constant="8" id="Zwx-dO-fhn"/>
+                    <constraint firstItem="yfA-dn-BwY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cix-Qt-Sq2"/>
+                    <constraint firstItem="KDt-yV-6q8" firstAttribute="leading" secondItem="yfA-dn-BwY" secondAttribute="trailing" constant="53" id="eN4-WN-t34"/>
+                    <constraint firstAttribute="bottom" secondItem="yfA-dn-BwY" secondAttribute="bottom" constant="17" id="wXy-SR-Pcz"/>
+                    <constraint firstItem="yfA-dn-BwY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="xqj-Ga-Zlq"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

@@ -61,9 +61,13 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func payProcess(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
-        self.navigationController?.pushViewController(vc, animated: true)
+//        if  {
+//            print("Data harus diisi")
+//        } else {
+            let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
+            self.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
 }
 
