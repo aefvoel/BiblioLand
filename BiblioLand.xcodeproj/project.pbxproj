@@ -58,6 +58,7 @@
 		AB624AED24D91C4C0095CC49 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE524D91C4C0095CC49 /* ButtonCell.swift */; };
 		AB624AEE24D91C4C0095CC49 /* SynopsisLenderNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE624D91C4C0095CC49 /* SynopsisLenderNotesCell.swift */; };
 		AB624AEF24D91C4C0095CC49 /* BookDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE724D91C4C0095CC49 /* BookDetailsVC.swift */; };
+		AB624AF224DBB0580095CC49 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB624AF124DBB0580095CC49 /* CloudKit.framework */; };
 		AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */; };
 		AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */; };
 		AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */; };
@@ -144,6 +145,7 @@
 		AB624AE524D91C4C0095CC49 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		AB624AE624D91C4C0095CC49 /* SynopsisLenderNotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynopsisLenderNotesCell.swift; sourceTree = "<group>"; };
 		AB624AE724D91C4C0095CC49 /* BookDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsVC.swift; sourceTree = "<group>"; };
+		AB624AF124DBB0580095CC49 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -184,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB624AF224DBB0580095CC49 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +341,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		AB624AF024DBB0580095CC49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB624AF124DBB0580095CC49 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ABA2829B24C7EF4F002719DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +374,7 @@
 				42CC89DD24CA2F40006E6DCD /* Main.storyboard */,
 				ABAF3DF324C1421E00B704B7 /* BiblioLand */,
 				ABAF3DF224C1421E00B704B7 /* Products */,
+				AB624AF024DBB0580095CC49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -737,14 +749,14 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.BiblioLand;
+				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -759,14 +771,14 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.BiblioLand;
+				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
