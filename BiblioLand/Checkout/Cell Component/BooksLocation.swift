@@ -48,7 +48,7 @@ class BooksLocation: UITableViewCell {
         locationManager = CLLocationManager()
         locationManager.delegate = self
 
-        shadowDecorate()
+        TableShadowDecorate()
         pickingMap()
         getAccessUserLocation()
         createPickerView()

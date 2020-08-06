@@ -15,7 +15,7 @@ class TotalPay: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowDecorate()
+        TableShadowDecorate()
     }
     
     func updateTotalPay(data: String) {

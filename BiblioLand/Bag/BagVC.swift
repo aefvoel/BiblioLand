@@ -171,6 +171,7 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
             let price = idrFormat(harga: dataCheckout[indexPath.section].booksData![indexPath.row].pricing!)
             let deposit = idrFormat(harga: dataCheckout[indexPath.section].booksData![indexPath.row].deposit!)
             
+
             cell2.bookImage.image = dataCheckout[indexPath.section].booksData?[indexPath.row].bookImage
             cell2.pricing.text = "Price: Rp\(price)"
             cell2.deposit.text = "Book Deposit: Rp\(deposit)"
