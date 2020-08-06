@@ -13,6 +13,7 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var bookDetailsTable: UITableView!
     
     var bookInfo = [BookInfo]()
+    var seeMoreisClicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +89,6 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
             cell.selectionStyle = .none
-            
              cell.layer.shadowColor = UIColor.black.cgColor
              cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
              cell.layer.shadowOpacity = 0.2
@@ -99,16 +99,22 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         else if indexPath.section == 3{
 
             let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: LenderCell.identifier, for: indexPath) as! LenderCell
+            cell.selectionStyle = .none
+
             return cell
         }
         else if indexPath.section == 4{
             
             let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
+            cell.selectionStyle = .none
+
             return cell
         }
         else {
             
             let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: SynopsisLenderNotesCell.identifier, for: indexPath) as! SynopsisLenderNotesCell
+            cell.selectionStyle = .none
+
             return cell
         }
     }
@@ -119,13 +125,16 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         } else if indexPath.section == 3{
             return 150
         } else if indexPath.section == 4{
-            return 100
+            if seeMoreisClicked == true{
+                return 100
+            } else {
+                return 70
+            }
         }else{
             return 150
         }
     }
     
-
 
 }
 

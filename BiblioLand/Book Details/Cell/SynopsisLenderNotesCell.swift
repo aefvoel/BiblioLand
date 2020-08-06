@@ -71,7 +71,7 @@ class SynopsisLenderNotesCell: UITableViewCell, UITextViewDelegate {
 
 //            self.descriptionTxtView.frame = CGRect(x: self.descriptionTxtView.frame.origin.x, y: self.descriptionTxtView.frame.origin.y, width: self.descriptionTxtView.frame.size.width, height: 116)
 
-            self.descriptionTxtViewHeight.constant = 64
+            self.descriptionTxtViewHeight.constant = 70
 
             //self.view.layoutIfNeeded()
             
