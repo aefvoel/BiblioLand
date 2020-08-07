@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CloudKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
     var books = [Books]()
     var genres = [Genre]()
     
@@ -35,6 +37,44 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.navigationBar.barTintColor = greenColor
     }
+    
+    func retrieveData(){
+        let predicate = NSPredicate(value: true)
+            
+        let query = CKQuery(recordType: "books", predicate: predicate)
+//        query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
+            
+        let operation = CKQueryOperation(query: query)
+        operation.desiredKeys = ["title","category", "price_per_day", "photo"]
+            
+        var bookCK = [Books]()
+        operation.recordFetchedBlock = { record in
+            
+            let photo = record["photo"] as! CKAsset
+            let data = try? Data(contentsOf: photo.fileURL!)
+            bookCK.append(Books(bookTitle: record["title"]!, bookPrice: (record["price_per_day"] as! NSNumber).stringValue, bookImg: UIImage(data: data!)!))
+                
+        }
+            
+        operation.queryCompletionBlock = { cursor, error in
+                
+            DispatchQueue.main.async {
+                    
+                if error == nil {
+                    self.books = bookCK
+                    self.table.reloadData()
+                } else {
+                    print(error!.localizedDescription)
+                }
+                    
+            }
+                
+        }
+            
+        privateDatabase.add(operation)
+            
+    
+    }
     @IBAction func goToCart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Bag", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as! BagVC
@@ -42,14 +82,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func insertData(){
-        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
         
         genres.append(Genre(genreName: "All Genre"))
         genres.append(Genre(genreName: "Business"))
@@ -74,6 +114,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.separatorStyle = .none
         
         insertData()
+        retrieveData()
     }
     
 
@@ -171,9 +212,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
 struct Books {
-    let bookTitle: String
-    let bookPrice: String
-    let bookImg: UIImage
+    var bookTitle: String
+    var bookPrice: String
+    var bookImg: UIImage
     
     init(bookTitle: String, bookPrice: String, bookImg: UIImage) {
         self.bookTitle = bookTitle
