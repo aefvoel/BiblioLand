@@ -11,7 +11,7 @@ import AuthenticationServices
 import CloudKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var emailSignInTF: UITextField!
     @IBOutlet weak var passwordSignInTF: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
@@ -19,13 +19,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signInBtnView: SignupButton!
     var authorizationButton: ASAuthorizationAppleIDButton!
-    
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    var isUserExist = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailSignInTF.delegate = self
         passwordSignInTF.delegate = self
-       
+        
         // hide password
         passwordSignInTF.isSecureTextEntry = true
         showPassSignInButton.addTarget(self, action: #selector(self.buttonPasswordVisibilityClicked(_:)), for: .touchUpInside)
@@ -49,63 +51,116 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buttonPasswordVisibilityClicked(_ sender: Any) {
-    (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
-    if (sender as! UIButton).isSelected {
-        self.passwordSignInTF.isSecureTextEntry = false
-        showPassSignInButton.setImage(UIImage(named: "eye_slash"), for: .normal)
-    } else {
-        self.passwordSignInTF.isSecureTextEntry = true
-        showPassSignInButton.setImage(UIImage(named: "eye"), for: .normal)
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        if (sender as! UIButton).isSelected {
+            self.passwordSignInTF.isSecureTextEntry = false
+            showPassSignInButton.setImage(UIImage(named: "eye_slash"), for: .normal)
+        } else {
+            self.passwordSignInTF.isSecureTextEntry = true
+            showPassSignInButton.setImage(UIImage(named: "eye"), for: .normal)
         }
     }
-        
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     @IBAction func onBtnSIgnIn(_ sender: Any) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! UITabBarController
-    //        self.navigationController?.pushViewController(vc, animated: true)
+        retrieveUserFromCloudKit()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func toHome(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! UITabBarController
+        //        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let window = self.view.window
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+    }
+    
+    func toSignUp(){
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func retrieveUserFromCloudKit(){
+        let predicate = NSPredicate(value: true)
+        
+        let query = CKQuery(recordType: "userInfo", predicate: predicate)
+        //        query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
+        
+        let operation = CKQueryOperation(query: query)
+        
+        operation.recordFetchedBlock = { record in
             
-            let window = self.view.window
-            window?.rootViewController = vc
-            window?.makeKeyAndVisible()
+            if (record["emailAddress"] == self.emailSignInTF.text && record["password"] == self.passwordSignInTF.text){
+                UserDefaults.standard.set(record.recordID.recordName, forKey: "userID")
+                self.isUserExist = true
+                print("exist")
+            }
         }
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(true)
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        operation.queryCompletionBlock = { cursor, error in
+            
+            DispatchQueue.main.async {
+                
+                if error == nil {
+                    if (self.isUserExist) {
+                        self.toHome()
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    } else {
+                        print("user not exist")
+                        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+                    }
+                } else {
+                    print(error!.localizedDescription)
+                }
+                
+            }
+            
         }
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(true)
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        }
-
+        
+        privateDatabase.add(operation)
+        
+        
+    }
+    
 }
 
 extension SignInViewController: ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
         if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
             let userID = appleIDCredential.user
             if let name = appleIDCredential.fullName?.givenName,
                 let emailAddr = appleIDCredential.email {
-                //New user (Signing up).
-                //Save this information to CloudKit
-                let record = CKRecord(recordType: "userInfo", recordID: CKRecord.ID(recordName: userID))
-                record["name"] = name
-                record["emailAddress"] = emailAddr
-                privateDatabase.save(record) { (_, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }else{
-                        UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
+                
+                privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
+                    if error == nil {
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                        UserDefaults.standard.set(userID, forKey: "userID")
+                    } else {
+                        UserDefaults.standard.set(userID, forKey: "userID")
+                        UserDefaults.standard.set(name, forKey: "userName")
+                        UserDefaults.standard.set(emailAddr, forKey: "userEmail")
+                        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+                        print(error?.localizedDescription)
                     }
-                    
-                    
                 }
+                
+                
             } else {
                 //Returning user (signing in)
                 //Fetch the user name/ email address
@@ -117,19 +172,16 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                         
                         //You can now use the user name and email address (like save it to local)
                         print("Name is \(name) and email address is \(userEmailAddr)")
-                        UserDefaults.standard.set(userID, forKey: "userProfileID")
+                        
                     }
                 }
             }
         }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! UITabBarController
-        //        self.navigationController?.pushViewController(vc, animated: true)
-                
-                let window = self.view.window
-                window?.rootViewController = vc
-                window?.makeKeyAndVisible()
+        if UserDefaults.standard.bool(forKey: "isLoggedIn"){
+            toHome()
+        }else {
+            toSignUp()
+        }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

@@ -156,7 +156,7 @@
 		AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		ABAF3DF124C1421E00B704B7 /* BiblioLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiblioLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAF3DF124C1421E00B704B7 /* Bibl.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bibl.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF824C1421E00B704B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -391,7 +391,7 @@
 		ABAF3DF224C1421E00B704B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABAF3DF124C1421E00B704B7 /* BiblioLand.app */,
+				ABAF3DF124C1421E00B704B7 /* Bibl.io.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,7 +501,7 @@
 			);
 			name = BiblioLand;
 			productName = BiblioLand;
-			productReference = ABAF3DF124C1421E00B704B7 /* BiblioLand.app */;
+			productReference = ABAF3DF124C1421E00B704B7 /* Bibl.io.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -607,7 +607,6 @@
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
-				D73CFDAC24C95C32001367D9 /* Maps.swift in Sources */,
 				E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */,
 				D73CFDA824C95C16001367D9 /* SearchBookTableViewController.swift in Sources */,
 				AB61971E24D179900092EB8B /* StatusBorrowing.swift in Sources */,
@@ -786,7 +785,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bibl.io;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -808,7 +807,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bibl.io;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

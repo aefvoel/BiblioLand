@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="k8f-IP-z9f">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="vuA-LZ-ade" customClass="HomeViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="vuA-LZ-ade" customClass="HomeViewController" customModule="Bibl_io" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vEr-c2-M7c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="walletCell" rowHeight="150" id="Gcp-0h-N60">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="walletCell" rowHeight="150" id="Gcp-0h-N60" customClass="WalletCell" customModule="Bibl_io" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gcp-0h-N60" id="dF8-J2-kBm">
@@ -80,6 +80,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="textBalance" destination="1uf-dV-iJM" id="LMd-RB-4dj"/>
+                                            <outlet property="textDeposit" destination="q4c-Hx-pHz" id="jKf-pj-zfw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -182,7 +186,7 @@
         <!--My Location-->
         <scene sceneID="GIf-2M-wUt">
             <objects>
-                <viewController id="6dX-Nd-63B" customClass="MapViewController" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6dX-Nd-63B" customClass="MapViewController" customModule="Bibl_io" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i7l-Xr-edG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

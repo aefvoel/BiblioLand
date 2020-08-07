@@ -13,6 +13,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var table: UITableView!
     
+    var balance = 0
+    var deposit = 0
+    
     let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
     var books = [Books]()
     var genres = [Genre]()
@@ -38,6 +41,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationController?.navigationBar.barTintColor = greenColor
     }
     
+    func retrieveUser(){
+        if let userCloudID = UserDefaults.standard.string(forKey: "userID") {
+            let recordID = CKRecord.ID(recordName: userCloudID)
+            privateDatabase.fetch(withRecordID: recordID) { (fetchedRecord, error) in
+                if error == nil {
+                    self.balance = fetchedRecord?["balance"] as! Int
+                    self.deposit = fetchedRecord?["deposit"] as! Int
+                    //TODO
+                } else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
     func retrieveData(){
         let predicate = NSPredicate(value: true)
             
@@ -47,12 +64,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let operation = CKQueryOperation(query: query)
         operation.desiredKeys = ["title","category", "price_per_day", "photo"]
             
-        var bookCK = [Books]()
         operation.recordFetchedBlock = { record in
             
             let photo = record["photo"] as! CKAsset
             let data = try? Data(contentsOf: photo.fileURL!)
-            bookCK.append(Books(bookTitle: record["title"]!, bookPrice: (record["price_per_day"] as! NSNumber).stringValue, bookImg: UIImage(data: data!)!))
+            let price = (record["price_per_day"] as! NSNumber).stringValue
+            self.books.append(Books(bookTitle: record["title"]!, bookPrice: "Rp. \(price)", bookImg: UIImage(data: data!)!))
+            self.genres.append(Genre(genreName: record["category"]!))
                 
         }
             
@@ -61,7 +79,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             DispatchQueue.main.async {
                     
                 if error == nil {
-                    self.books = bookCK
                     self.table.reloadData()
                 } else {
                     print(error!.localizedDescription)
@@ -75,31 +92,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
     
     }
+    
     @IBAction func goToCart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Bag", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as! BagVC
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func insertData(){
-//        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
-//        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
-        
-        genres.append(Genre(genreName: "All Genre"))
-        genres.append(Genre(genreName: "Business"))
-        genres.append(Genre(genreName: "Fiction"))
-        genres.append(Genre(genreName: "Fantasy"))
-        genres.append(Genre(genreName: "Mistery"))
-        genres.append(Genre(genreName: "Romance"))
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,8 +113,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.dataSource = self
         table.separatorStyle = .none
         
-        insertData()
         retrieveData()
+        retrieveUser()
     }
     
 
@@ -167,7 +167,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = table.dequeueReusableCell(withIdentifier: "walletCell", for: indexPath)
+            let cell = table.dequeueReusableCell(withIdentifier: "walletCell", for: indexPath) as! WalletCell
             cell.selectionStyle = .none
            
             cell.layer.shadowColor = UIColor.black.cgColor
@@ -175,6 +175,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.layer.shadowOpacity = 0.2
             cell.layer.shadowOffset = .zero
             cell.layer.shadowRadius = 5
+            
+            cell.textBalance.text = "Rp. \(balance)"
+            cell.textDeposit.text = "Rp. \(deposit)"
             
             return cell
         } else if indexPath.section == 3 {
@@ -229,4 +232,9 @@ struct Genre {
     init(genreName: String) {
         self.genreName = genreName
     }
+}
+
+class WalletCell: UITableViewCell {
+    @IBOutlet weak var textBalance: UILabel!
+    @IBOutlet weak var textDeposit: UILabel!
 }
