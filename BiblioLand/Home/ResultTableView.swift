@@ -61,7 +61,7 @@ class ResultTableView: UIViewController, UISearchResultsUpdating, UISearchBarDel
 
         cell.bookImage.image = bookFiletring[indexPath.row].bookImg
         cell.bookTitle.text = bookFiletring[indexPath.row].bookTitle
-        cell.bookPricing.text = bookFiletring[indexPath.row].bookPrice
+        cell.bookPricing.text = "\(bookFiletring[indexPath.row].bookPrice)/day"
         cell.borrowFrom.text = "Borrow From DQ"
         cell.booksStatus.text = "Available"
 
@@ -88,6 +88,6 @@ class ResultTableView: UIViewController, UISearchResultsUpdating, UISearchBarDel
 //    q
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 75
     }
 }

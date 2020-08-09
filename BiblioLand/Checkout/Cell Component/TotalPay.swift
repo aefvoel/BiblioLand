@@ -17,14 +17,8 @@ class TotalPay: UITableViewCell {
         
         TableShadowDecorate()
     }
-    
-    func updateTotalPay(data: String) {
-        totalPay.text = data
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

@@ -161,8 +161,11 @@ extension BagVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = listBag.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ComponentListCell else {
                    do {fatalError("Unable to create component list table")}
                }
-            cell.booksData = insertBook()
-           return cell
+            if dataCheckout.count > 0 {
+                guard let books = dataCheckout[0].booksData else { return cell }
+                cell.booksData = books
+            }
+            return cell
         } else {
             guard let cell2 = listBag.dequeueReusableCell(withIdentifier: "BookCheckout", for: indexPath) as? BookCheckout else {
                 do {fatalError("Unable to create component")}
@@ -206,15 +209,13 @@ extension BagVC: CellDelegate {
         } else {
             dataCheckout[section].booksData?.remove(at: row)
         }
-        
-        print(dataCheckout.count)
-        
+                
         if dataCheckout.count > 0 {
             listBag.reloadData()
         } else {
             listBag.reloadData()
             state = false
-            self.viewDidLoad()
+            self.viewWillAppear(true)
         }
     }
 }

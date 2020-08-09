@@ -182,7 +182,6 @@
         <!--Result Table View-->
         <scene sceneID="POE-mX-uqE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p5m-b9-c7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ResultTableView" id="DRc-q5-ajF" customClass="ResultTableView" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RaL-71-alT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -224,6 +223,9 @@
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvl-e6-wP9">
                                                     <rect key="frame" x="225" y="40" width="129" height="21"/>
@@ -252,6 +254,7 @@
                         <outlet property="datanya" destination="Iyl-Ys-8DM" id="B0p-lF-clL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5m-b9-c7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4502.898550724638" y="-212.27678571428569"/>
         </scene>

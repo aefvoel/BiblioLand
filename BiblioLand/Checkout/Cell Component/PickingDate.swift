@@ -16,7 +16,7 @@ class PickingDate: UITableViewCell {
     @IBOutlet weak var totalToPay: UILabel!
     
     var harga: [Int] = [0]
-    
+        
     let startPicker = UIDatePicker()
     let endPicker = UIDatePicker()
     let locale = Locale.preferredLanguages.first
@@ -79,7 +79,6 @@ extension PickingDate {
             }
             
             totalToPay.text = "Rp\(idrFormat(harga: sumAmount))"
-            
         }
     }
     
