@@ -165,3 +165,19 @@ struct BookInfo{
         self.bookNotes = bookNotes
     }
 }
+
+class bookInfoCell: UITableViewCell{
+    
+    @IBOutlet weak var bookImg: UIImageView!
+    @IBOutlet weak var bookTitleLbl: UILabel!
+    @IBOutlet weak var bookAuthorLbl: UILabel!
+    @IBOutlet weak var bookLanguageLbl: UILabel!
+    @IBOutlet weak var bookConditionLbl: UILabel!
+    @IBOutlet weak var bookPagesLbl: UILabel!
+    @IBOutlet weak var bookEditionLbl: UILabel!
+    @IBOutlet weak var bookPriceLbl: UILabel!
+    @IBOutlet weak var bookDepositLbl: UILabel!
+    
+    
+    
+}
