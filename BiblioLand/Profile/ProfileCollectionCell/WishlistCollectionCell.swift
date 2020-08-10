@@ -15,6 +15,7 @@ class WishlistCollectionCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     
     static let identifier = "WishlistCollectionCell"
+    
     static func nib() -> UINib{
         return UINib(nibName: "WishlistCollectionCell", bundle: nil)
     }

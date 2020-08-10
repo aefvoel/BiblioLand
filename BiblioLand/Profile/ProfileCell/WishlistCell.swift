@@ -32,6 +32,8 @@ class WishlistCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewD
         collectionView.register(WishlistCollectionCell.nib(), forCellWithReuseIdentifier: WishlistCollectionCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        print("Data: \(bookWishlist)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

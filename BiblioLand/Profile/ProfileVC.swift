@@ -19,13 +19,13 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         setupViewReview()
         setupViewWishlist()
+        insertData()
         
         ProfileTable.delegate = self
         ProfileTable.dataSource = self
         ProfileTable.separatorStyle = .none
         
         
-        insertData()
         // Do any additional setup after loading the view.
     }
     
@@ -91,6 +91,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.section == 1{
             let cell = ProfileTable.dequeueReusableCell(withIdentifier: WishlistCell.identifier, for: indexPath) as! WishlistCell
+            cell.bookWishlist = bookWishlist
             return cell
         }
         else{
@@ -104,7 +105,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
-            return 400
+            return 350
         } else if indexPath.section == 1{
             return 300
         } else {
