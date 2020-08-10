@@ -40,7 +40,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         authorizationButton.addTarget(self, action: #selector(handleAppleIdRequest), for: .touchUpInside)
         signInBtnView.addSubview(authorizationButton)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if (UserDefaults.standard.bool(forKey: "isLoggedIn")){
+            toHome()
+        }
+    }
     @objc func handleAppleIdRequest(){
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
