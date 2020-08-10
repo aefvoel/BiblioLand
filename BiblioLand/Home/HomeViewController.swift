@@ -109,12 +109,32 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    func insertData(){
+        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
+        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
+        
+        genres.append(Genre(genreName: "All Genre"))
+        genres.append(Genre(genreName: "Business"))
+        genres.append(Genre(genreName: "Fiction"))
+        genres.append(Genre(genreName: "Fantasy"))
+        genres.append(Genre(genreName: "Mistery"))
+        genres.append(Genre(genreName: "Romance"))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavbar()
 
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavbar()
-
         table.register(BookTableViewCell.nib(), forCellReuseIdentifier: BookTableViewCell.identifier)
         table.register(AllBookTableViewCell.nib(), forCellReuseIdentifier: AllBookTableViewCell.identifier)
         table.register(AllGenreTableViewCell.nib(), forCellReuseIdentifier: AllGenreTableViewCell.identifier)
