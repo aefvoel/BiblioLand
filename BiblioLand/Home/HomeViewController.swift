@@ -9,9 +9,10 @@
 import UIKit
 import CloudKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UISearchControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
+    var searchControllers: UISearchController!
     
     var balance = 0
     var deposit = 0
@@ -23,21 +24,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let greenColor = UIColor(red: 0.24, green: 0.59, blue: 0.57, alpha: 1.00)
     
     func setupNavbar() {
-        let searchController = UISearchController(searchResultsController: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ResultTableView") as! ResultTableView
+        searchControllers = UISearchController(searchResultsController: vc)
         
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Book Title, Author or Lender Name"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        searchControllers.searchResultsUpdater = vc
+        searchControllers.searchBar.delegate = vc
+        
+        searchControllers.searchBar.barTintColor = .green
 
-        searchController.searchBar.tintColor = UIColor.white
-        searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.searchTextField.backgroundColor = UIColor.white
-        searchController.searchBar.searchTextField.font = .systemFont(ofSize: 12.0)
-//        searchController.searchBar.setShowsCancelButton(false, animated: true)
-        
+        searchControllers.delegate = self
+        self.definesPresentationContext = true
+
+        searchControllers.hidesNavigationBarDuringPresentation = true
+        searchControllers.searchBar.placeholder = "Search Book Title, Author or Lender Name"
+        searchControllers.searchBar.sizeToFit()
+
+        navigationItem.searchController = searchControllers
+
+        searchControllers.searchBar.tintColor = UIColor.white
+        searchControllers.searchBar.searchBarStyle = .minimal
+        searchControllers.searchBar.searchTextField.backgroundColor = UIColor.white
+        searchControllers.searchBar.searchTextField.font = .systemFont(ofSize: 12.0)
+
         navigationItem.hidesSearchBarWhenScrolling = false
-        
+
         navigationController?.navigationBar.barTintColor = greenColor
     }
     
@@ -212,7 +222,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 }
-
 
 struct Books {
     var bookTitle: String

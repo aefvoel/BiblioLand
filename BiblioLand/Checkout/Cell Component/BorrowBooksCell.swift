@@ -23,7 +23,7 @@ class BorrowBooksCell: UITableViewCell {
         bookImage.layer.cornerRadius = 7.0
         bookImage.clipsToBounds = true
         
-        shadowDecorate()
+        TableShadowDecorate()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

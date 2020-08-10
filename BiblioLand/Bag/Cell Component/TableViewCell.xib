@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,39 +10,54 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Book2" translatesAutoresizingMaskIntoConstraints="NO" id="mWs-gu-RmY">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book2" translatesAutoresizingMaskIntoConstraints="NO" id="mWs-gu-RmY">
                         <rect key="frame" x="20" y="17" width="40" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="62W-d5-Cqb"/>
+                            <constraint firstAttribute="height" constant="60" id="RDn-aw-gSo"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Kings Of Drugs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-wg-a00">
-                        <rect key="frame" x="68" y="17" width="254" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Kings Of Drugs" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-wg-a00">
+                        <rect key="frame" x="68" y="17" width="134.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="aNg-25-Wf4"/>
+                            <constraint firstAttribute="width" constant="134.5" id="jLN-Nk-Weq"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price: Rp1.000/day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-Rl-fDb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: Rp1.000/day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-Rl-fDb">
                         <rect key="frame" x="68" y="40" width="254" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="254" id="fly-Kf-9qy"/>
+                            <constraint firstAttribute="height" constant="21" id="olC-0F-Q0w"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Deposit: Rp20.000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-av-OhT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Deposit: Rp20.000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-av-OhT">
                         <rect key="frame" x="68" y="61" width="254" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="254" id="6fn-6k-gAZ"/>
+                            <constraint firstAttribute="height" constant="21" id="p1A-zj-3S2"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Un-ym-vey">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Un-ym-vey">
                         <rect key="frame" x="335" y="38" width="20" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="xB5-Y0-QqD"/>
+                            <constraint firstAttribute="width" constant="20" id="zoG-hz-uNN"/>
+                        </constraints>
                         <color key="tintColor" red="0.074569873509999995" green="0.078350983560000004" blue="0.08235361427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <state key="normal" image="trash" catalog="system"/>
                         <connections>
@@ -51,8 +65,27 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Vr7-wg-a00" firstAttribute="leading" secondItem="mWs-gu-RmY" secondAttribute="trailing" constant="8" id="2Xk-I0-Jf1"/>
+                    <constraint firstAttribute="bottom" secondItem="mWs-gu-RmY" secondAttribute="bottom" constant="22" id="3OL-sk-ZdW"/>
+                    <constraint firstItem="4Ce-av-OhT" firstAttribute="top" secondItem="MUe-Rl-fDb" secondAttribute="bottom" id="5rS-FI-cOb"/>
+                    <constraint firstItem="mWs-gu-RmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="9G3-oG-cQw"/>
+                    <constraint firstItem="MUe-Rl-fDb" firstAttribute="top" secondItem="Vr7-wg-a00" secondAttribute="bottom" constant="2" id="ANn-HI-J57"/>
+                    <constraint firstItem="mWs-gu-RmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="BXZ-t4-RoV"/>
+                    <constraint firstItem="4Ce-av-OhT" firstAttribute="leading" secondItem="mWs-gu-RmY" secondAttribute="trailing" constant="8" id="Lpd-wD-UiO"/>
+                    <constraint firstAttribute="bottom" secondItem="2Un-ym-vey" secondAttribute="bottom" constant="39" id="Omz-q9-Nbp"/>
+                    <constraint firstItem="Vr7-wg-a00" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="Ptm-ha-TUm"/>
+                    <constraint firstItem="2Un-ym-vey" firstAttribute="leading" secondItem="MUe-Rl-fDb" secondAttribute="trailing" constant="13" id="Td9-Tl-XUL"/>
+                    <constraint firstItem="MUe-Rl-fDb" firstAttribute="leading" secondItem="mWs-gu-RmY" secondAttribute="trailing" constant="8" id="V9i-iY-O4y"/>
+                    <constraint firstItem="2Un-ym-vey" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="h76-xG-2Nl"/>
+                    <constraint firstAttribute="trailing" secondItem="Vr7-wg-a00" secondAttribute="trailing" constant="172.5" id="jgH-lY-gY8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4Ce-av-OhT" secondAttribute="trailing" constant="33" id="npU-W5-LEt"/>
+                    <constraint firstAttribute="trailing" secondItem="2Un-ym-vey" secondAttribute="trailing" constant="20" id="pLr-bf-bkQ"/>
+                    <constraint firstItem="MUe-Rl-fDb" firstAttribute="top" secondItem="Vr7-wg-a00" secondAttribute="bottom" constant="2" id="uYt-Uu-d25"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4Ce-av-OhT" secondAttribute="bottom" constant="6" id="yz0-oB-c49"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="100"/>
             <connections>
                 <outlet property="bookImage" destination="mWs-gu-RmY" id="51u-ee-zdy"/>
                 <outlet property="booksTitle" destination="Vr7-wg-a00" id="lde-Ix-Apc"/>
@@ -60,7 +93,7 @@
                 <outlet property="deposit" destination="4Ce-av-OhT" id="4lR-lO-Kkc"/>
                 <outlet property="pricing" destination="MUe-Rl-fDb" id="63i-Ww-FDs"/>
             </connections>
-            <point key="canvasLocation" x="179.71014492753625" y="130.24553571428572"/>
+            <point key="canvasLocation" x="179" y="123"/>
         </tableViewCell>
     </objects>
     <resources>

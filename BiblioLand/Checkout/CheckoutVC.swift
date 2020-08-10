@@ -61,9 +61,28 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func payProcess(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        let index = IndexPath(row: data.count, section: 0)
+        let cell: PickingDate = self.listCheckout.cellForRow(at: index) as! PickingDate
+        
+        let index2 = IndexPath(row: data.count+1, section: 0)
+        let cell2: BooksLocation = self.listCheckout.cellForRow(at: index2) as! BooksLocation
+        
+        let index3 = IndexPath(row: data.count+2, section: 0)
+        let cell3: PaymentMethod = self.listCheckout.cellForRow(at: index3) as! PaymentMethod
+        
+        let index4 = IndexPath(row: data.count+3, section: 0)
+        let cell4: TotalPay = self.listCheckout.cellForRow(at: index4) as! TotalPay
+        
+        print(cell4.totalPay.text)
+        
+        if cell.startDatePick.text == "" || cell.endDatePick.text == "" || cell2.deliveryMethod.text == "" || cell2.pickupTime.text == "" || cell3.choosePayment.text == "" {
+            let alert = showAlert(message: "All data must be filled")
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

@@ -13,7 +13,7 @@ protocol CellDelegate: AnyObject {
 }
 
 class BookCheckout: UITableViewCell {
-
+    
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var booksTitle: UILabel!
     @IBOutlet weak var pricing: UILabel!
@@ -33,7 +33,7 @@ class BookCheckout: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowDecorate()
+        TableShadowDecorate()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

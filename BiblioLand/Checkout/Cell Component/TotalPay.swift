@@ -11,17 +11,14 @@ import UIKit
 class TotalPay: UITableViewCell {
 
     @IBOutlet weak var totalPay: UILabel!
-    
+            
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowDecorate()
+        TableShadowDecorate()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

@@ -47,48 +47,69 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-LU-Dyi">
+                        <rect key="frame" x="20" y="104" width="35" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="L2x-YJ-bZY"/>
+                            <constraint firstAttribute="width" constant="35" id="OjU-Ur-bNQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN7-LN-uSj">
+                        <rect key="frame" x="20" y="130" width="53" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="LZU-2o-Xz2"/>
+                            <constraint firstAttribute="width" constant="53" id="zOZ-Yb-1Wx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp1.000/day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMf-Ph-63N">
+                        <rect key="frame" x="216" y="104" width="138" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp20.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-WA-jgt">
+                        <rect key="frame" x="216" y="130" width="137" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="1ib-PB-abO"/>
+                            <constraint firstAttribute="width" constant="137" id="WeH-nW-ZtG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        </variation>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by Nora Barrett" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-Vu-gPR">
-                        <rect key="frame" x="68" y="72" width="286" height="21"/>
+                        <rect key="frame" x="68" y="64" width="286" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-LU-Dyi">
-                        <rect key="frame" x="20" y="104" width="91" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN7-LN-uSj">
-                        <rect key="frame" x="20" y="130" width="126" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rp20.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-WA-jgt">
-                        <rect key="frame" x="198" y="130" width="156" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                        </variation>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rp1.000/day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMf-Ph-63N">
-                        <rect key="frame" x="186" y="104" width="168" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                        </variation>
-                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="e6l-WA-jgt" firstAttribute="top" secondItem="mMf-Ph-63N" secondAttribute="bottom" constant="8" id="0TP-eZ-56m"/>
+                    <constraint firstItem="gyh-LU-Dyi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7Wh-Hw-evc"/>
+                    <constraint firstItem="e6l-WA-jgt" firstAttribute="leading" secondItem="nN7-LN-uSj" secondAttribute="trailing" constant="143" id="A2t-kr-3GI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="e6l-WA-jgt" secondAttribute="trailing" constant="1" id="Fkn-Zx-zwA"/>
+                    <constraint firstItem="mMf-Ph-63N" firstAttribute="leading" secondItem="gyh-LU-Dyi" secondAttribute="trailing" constant="161" id="KuA-p1-ieS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="e6l-WA-jgt" secondAttribute="bottom" constant="20" id="MHY-qs-Asr"/>
+                    <constraint firstItem="mMf-Ph-63N" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="MPj-ql-Gr7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="e6l-WA-jgt" secondAttribute="trailing" constant="1" id="Oge-gI-x0k"/>
+                    <constraint firstItem="nN7-LN-uSj" firstAttribute="top" secondItem="gyh-LU-Dyi" secondAttribute="bottom" constant="8" id="dfE-U0-EpE"/>
+                    <constraint firstItem="nN7-LN-uSj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nks-d0-kWs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nN7-LN-uSj" secondAttribute="bottom" constant="20" id="wNJ-qP-449"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

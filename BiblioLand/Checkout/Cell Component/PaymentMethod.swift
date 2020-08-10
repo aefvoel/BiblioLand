@@ -17,7 +17,7 @@ class PaymentMethod: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        shadowDecorate()
+        TableShadowDecorate()
         createPickerView()
     }
 
