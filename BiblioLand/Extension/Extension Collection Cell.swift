@@ -26,14 +26,14 @@ func shadowDecorate() {
 }
 
 extension UITableViewCell {
-    func shadowDecorate() {
+    func TableShadowDecorate() {
         let radius: CGFloat = 7.0
         contentView.layer.cornerRadius = radius
         contentView.layer.masksToBounds = true
 
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 10.0)
-        layer.shadowRadius = 10.0
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowRadius = 4.0
         layer.shadowOpacity = 0.2
         layer.masksToBounds = false
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: radius).cgPath

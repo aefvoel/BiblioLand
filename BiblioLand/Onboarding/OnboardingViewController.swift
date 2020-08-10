@@ -29,8 +29,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func onBtnNext(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SignInVC") as! SignInVC
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
         self.navigationController?.pushViewController(vc, animated: true)
         self.dismiss(animated: true, completion: nil)
     }

@@ -16,7 +16,7 @@ class PickingDate: UITableViewCell {
     @IBOutlet weak var totalToPay: UILabel!
     
     var harga: [Int] = [0]
-    
+        
     let startPicker = UIDatePicker()
     let endPicker = UIDatePicker()
     let locale = Locale.preferredLanguages.first
@@ -54,7 +54,7 @@ class PickingDate: UITableViewCell {
 }
 
 extension PickingDate {
-
+    
     @objc func startPickerChange() {
         getDateFromPicker(sender: startPicker)
         checkingIsFilled()
@@ -88,9 +88,11 @@ extension PickingDate {
                 
         if sender == startPicker {
             startDatePick.text = formatter.string(from: startPicker.date)
+            
             endPicker.minimumDate = startPicker.date
         } else {
             endDatePick.text = formatter.string(from: endPicker.date)
+
             startPicker.maximumDate = endPicker.date
         }
     }

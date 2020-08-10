@@ -13,9 +13,11 @@
 		4228DFA024CEDE99003E82E2 /* Extension Collection Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228DF9F24CEDE99003E82E2 /* Extension Collection Cell.swift */; };
 		425C957F24C1ABE000E807A1 /* ButtonDoProccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */; };
 		425C958124C1B0D500E807A1 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C958024C1B0D500E807A1 /* CartView.swift */; };
+		425D2D7624DBC490006BC8E2 /* Bag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4238702924DB2C5800D3EFB1 /* Bag.storyboard */; };
 		426A417B24CE9A63007633CF /* ComponentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426A417A24CE9A63007633CF /* ComponentListCell.swift */; };
 		427FA17124C198C2008E3D40 /* BooksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17024C198C2008E3D40 /* BooksData.swift */; };
 		427FA17324C19C02008E3D40 /* OtherBooksReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FA17224C19C02008E3D40 /* OtherBooksReference.swift */; };
+		428EA24224D7C3280048B44B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EA24124D7C3280048B44B /* Models.swift */; };
 		429D95A124D55F9A00A39278 /* MapsViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D95A024D55F9A00A39278 /* MapsViewVC.swift */; };
 		42A6AD2324CFE180001B3706 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A6AD2224CFE180001B3706 /* Book.swift */; };
 		42AF9EBF24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF9EBE24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift */; };
@@ -39,9 +41,10 @@
 		42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89D924CA25CE006E6DCD /* SignInVC.swift */; };
 		42CC89DC24CA2A38006E6DCD /* CheckoutDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89DB24CA2A38006E6DCD /* CheckoutDoneVC.swift */; };
 		42CC89DE24CA2F40006E6DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CC89DD24CA2F40006E6DCD /* Main.storyboard */; };
+		42DBB6D424DC7C9100A998C3 /* ResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBB6D324DC7C9100A998C3 /* ResultTableView.swift */; };
+		42DBB6D624DC80D400A998C3 /* ResultnyaTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBB6D524DC80D400A998C3 /* ResultnyaTBC.swift */; };
 		42DBD88B24D3FDD5006AF723 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DBD88924D3FDD5006AF723 /* TableViewCell.xib */; };
 		42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBD88C24D480DF006AF723 /* Extension Date.swift */; };
-		42E85B3124C9D2B2009C4A7E /* Bag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E85B3024C9D2B2009C4A7E /* Bag.storyboard */; };
 		AB61970824D1536C0092EB8B /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61970624D1536C0092EB8B /* CurrentViewController.swift */; };
 		AB61971324D158500092EB8B /* BookBorrowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61971124D158500092EB8B /* BookBorrowing.swift */; };
 		AB61971424D158500092EB8B /* BookBorrowing.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB61971224D158500092EB8B /* BookBorrowing.xib */; };
@@ -58,6 +61,7 @@
 		AB624AED24D91C4C0095CC49 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE524D91C4C0095CC49 /* ButtonCell.swift */; };
 		AB624AEE24D91C4C0095CC49 /* SynopsisLenderNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE624D91C4C0095CC49 /* SynopsisLenderNotesCell.swift */; };
 		AB624AEF24D91C4C0095CC49 /* BookDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624AE724D91C4C0095CC49 /* BookDetailsVC.swift */; };
+		AB624AF224DBB0580095CC49 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB624AF124DBB0580095CC49 /* CloudKit.framework */; };
 		AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */; };
 		AB6F12C824CAC525007929BA /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */; };
 		AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */; };
@@ -86,6 +90,11 @@
 		D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */; };
 		D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */; };
 		D777E3EC24D8B07900CC24AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777E3EB24D8B07900CC24AD /* MapViewController.swift */; };
+		E60EEC7524D9013B00FD179B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EEC7424D9013B00FD179B /* Signup.storyboard */; };
+		E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7624D9017A00FD179B /* SignUpViewController.swift */; };
+		E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7824D90AA600FD179B /* SignupButton.swift */; };
+		E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7A24D90AB400FD179B /* CustomTextView.swift */; };
+		E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7C24DA54A000FD179B /* SignInViewController.swift */; };
 		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
 		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
 		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
@@ -96,11 +105,13 @@
 		420147B624C9E338007C7693 /* bookCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bookCollection.xib; sourceTree = "<group>"; };
 		420147BB24CA001C007C7693 /* BookCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCheckout.swift; sourceTree = "<group>"; };
 		4228DF9F24CEDE99003E82E2 /* Extension Collection Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Collection Cell.swift"; sourceTree = "<group>"; };
+		4238702924DB2C5800D3EFB1 /* Bag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bag.storyboard; sourceTree = "<group>"; };
 		425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDoProccess.swift; sourceTree = "<group>"; };
 		425C958024C1B0D500E807A1 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		426A417A24CE9A63007633CF /* ComponentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComponentListCell.swift; path = BiblioLand/Bag/ComponentListCell.swift; sourceTree = SOURCE_ROOT; };
 		427FA17024C198C2008E3D40 /* BooksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksData.swift; sourceTree = "<group>"; };
 		427FA17224C19C02008E3D40 /* OtherBooksReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBooksReference.swift; sourceTree = "<group>"; };
+		428EA24124D7C3280048B44B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		429D95A024D55F9A00A39278 /* MapsViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewVC.swift; sourceTree = "<group>"; };
 		42A6AD2224CFE180001B3706 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		42AF9EBE24D1CECB005D7E43 /* HelperGetBorrowerBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperGetBorrowerBooks.swift; sourceTree = "<group>"; };
@@ -125,9 +136,10 @@
 		42CC89D924CA25CE006E6DCD /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		42CC89DB24CA2A38006E6DCD /* CheckoutDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDoneVC.swift; sourceTree = "<group>"; };
 		42CC89DD24CA2F40006E6DCD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		42DBB6D324DC7C9100A998C3 /* ResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableView.swift; sourceTree = "<group>"; };
+		42DBB6D524DC80D400A998C3 /* ResultnyaTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultnyaTBC.swift; sourceTree = "<group>"; };
 		42DBD88924D3FDD5006AF723 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		42DBD88C24D480DF006AF723 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = "<group>"; };
-		42E85B3024C9D2B2009C4A7E /* Bag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bag.storyboard; sourceTree = "<group>"; };
 		AB61970624D1536C0092EB8B /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
 		AB61971124D158500092EB8B /* BookBorrowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookBorrowing.swift; sourceTree = "<group>"; };
 		AB61971224D158500092EB8B /* BookBorrowing.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookBorrowing.xib; sourceTree = "<group>"; };
@@ -144,12 +156,13 @@
 		AB624AE524D91C4C0095CC49 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		AB624AE624D91C4C0095CC49 /* SynopsisLenderNotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynopsisLenderNotesCell.swift; sourceTree = "<group>"; };
 		AB624AE724D91C4C0095CC49 /* BookDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsVC.swift; sourceTree = "<group>"; };
+		AB624AF124DBB0580095CC49 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AB6F12C324CAC525007929BA /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C424CAC525007929BA /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C524CAC525007929BA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AB6F12C624CAC525007929BA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		ABA282A524C7F0C5002719DE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		ABAF3DF124C1421E00B704B7 /* BiblioLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiblioLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAF3DF124C1421E00B704B7 /* Bibl.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bibl.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAF3DF424C1421E00B704B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF624C1421E00B704B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ABAF3DF824C1421E00B704B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +187,11 @@
 		D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGenreTableViewCell.swift; sourceTree = "<group>"; };
 		D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGenreTableViewCell.xib; sourceTree = "<group>"; };
 		D777E3EB24D8B07900CC24AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E60EEC7424D9013B00FD179B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		E60EEC7624D9017A00FD179B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E60EEC7824D90AA600FD179B /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
+		E60EEC7A24D90AB400FD179B /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		E60EEC7C24DA54A000FD179B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
@@ -184,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB624AF224DBB0580095CC49 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,11 +223,11 @@
 		427FA16E24C19893008E3D40 /* Bag */ = {
 			isa = PBXGroup;
 			children = (
+				4238702924DB2C5800D3EFB1 /* Bag.storyboard */,
 				42AF9EC024D1CEDF005D7E43 /* Helper */,
 				42A6AD2124CFE174001B3706 /* Model */,
 				420147B424C9E300007C7693 /* Cell Component */,
 				427FA16F24C1989F008E3D40 /* Component */,
-				42E85B3024C9D2B2009C4A7E /* Bag.storyboard */,
 				426A417A24CE9A63007633CF /* ComponentListCell.swift */,
 				42CC89B324CA06CF006E6DCD /* BagVC.swift */,
 			);
@@ -224,6 +243,14 @@
 				425C957E24C1ABE000E807A1 /* ButtonDoProccess.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		428EA24024D7C3160048B44B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				428EA24124D7C3280048B44B /* Models.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		42A6AD2124CFE174001B3706 /* Model */ = {
@@ -245,6 +272,7 @@
 		42CC89B024CA05B7006E6DCD /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				428EA24024D7C3160048B44B /* Models */,
 				42CC89BA24CA0A9D006E6DCD /* Cell Component */,
 				42CC89CF24CA0BAD006E6DCD /* Checkout.storyboard */,
 				42CC89D124CA0C83006E6DCD /* CheckoutVC.swift */,
@@ -338,6 +366,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		AB624AF024DBB0580095CC49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB624AF124DBB0580095CC49 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ABA2829B24C7EF4F002719DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,13 +399,14 @@
 				42CC89DD24CA2F40006E6DCD /* Main.storyboard */,
 				ABAF3DF324C1421E00B704B7 /* BiblioLand */,
 				ABAF3DF224C1421E00B704B7 /* Products */,
+				AB624AF024DBB0580095CC49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		ABAF3DF224C1421E00B704B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABAF3DF124C1421E00B704B7 /* BiblioLand.app */,
+				ABAF3DF124C1421E00B704B7 /* Bibl.io.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -379,6 +416,7 @@
 			children = (
 				AB624ADE24D91C4C0095CC49 /* Book Details */,
 				AB61970524D153340092EB8B /* CurrentBorrowing */,
+				E60EEC7324D900F500FD179B /* SignUp */,
 				D73CFDA424C7E200001367D9 /* Home */,
 				E6BF0CF124C7E1F1008706A9 /* Onboarding */,
 				ABA282A424C7F053002719DE /* Helper */,
@@ -405,8 +443,10 @@
 				D73CFDA524C7EFD3001367D9 /* Home.storyboard */,
 				D777E3EB24D8B07900CC24AD /* MapViewController.swift */,
 				D73CFDA924C95C27001367D9 /* SearchLocationTableViewController.swift */,
-				D73CFDA724C95C16001367D9 /* SearchBookTableViewController.swift */,
+				42DBB6D324DC7C9100A998C3 /* ResultTableView.swift */,
 				D75DB6F224C6D6FC00263F03 /* HomeViewController.swift */,
+				D73CFDA724C95C16001367D9 /* SearchBookTableViewController.swift */,
+				42DBB6D524DC80D400A998C3 /* ResultnyaTBC.swift */,
 				D75DB6E824C6D4DA00263F03 /* Collection Cell */,
 				D75DB6E924C6D4E800263F03 /* Table Cell */,
 			);
@@ -439,6 +479,18 @@
 			path = "Table Cell";
 			sourceTree = "<group>";
 		};
+		E60EEC7324D900F500FD179B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E60EEC7424D9013B00FD179B /* Signup.storyboard */,
+				E60EEC7C24DA54A000FD179B /* SignInViewController.swift */,
+				E60EEC7624D9017A00FD179B /* SignUpViewController.swift */,
+				E60EEC7824D90AA600FD179B /* SignupButton.swift */,
+				E60EEC7A24D90AB400FD179B /* CustomTextView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		E6BF0CF124C7E1F1008706A9 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,7 +518,7 @@
 			);
 			name = BiblioLand;
 			productName = BiblioLand;
-			productReference = ABAF3DF124C1421E00B704B7 /* BiblioLand.app */;
+			productReference = ABAF3DF124C1421E00B704B7 /* Bibl.io.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -515,7 +567,6 @@
 				42CC89BE24CA0B0F006E6DCD /* BorrowBooksCell.xib in Resources */,
 				42CC89D524CA1DC2006E6DCD /* Authentication.storyboard in Resources */,
 				42CC89C624CA0B60006E6DCD /* BooksLocation.xib in Resources */,
-				42E85B3124C9D2B2009C4A7E /* Bag.storyboard in Resources */,
 				42CC89D024CA0BAD006E6DCD /* Checkout.storyboard in Resources */,
 				AB61971424D158500092EB8B /* BookBorrowing.xib in Resources */,
 				42CC89C224CA0B41006E6DCD /* PickingDate.xib in Resources */,
@@ -523,6 +574,7 @@
 				42CC89DE24CA2F40006E6DCD /* Main.storyboard in Resources */,
 				ABAF3E0424C1421F00B704B7 /* LaunchScreen.storyboard in Resources */,
 				AB624AE924D91C4C0095CC49 /* ButtonCell.xib in Resources */,
+				425D2D7624DBC490006BC8E2 /* Bag.storyboard in Resources */,
 				D76F046124C73FC400EC3999 /* AllBookTableViewCell.xib in Resources */,
 				D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */,
 				AB61971F24D179900092EB8B /* StatusBorrowing.xib in Resources */,
@@ -530,6 +582,7 @@
 				ABAF3E0124C1421F00B704B7 /* Assets.xcassets in Resources */,
 				AB624AE824D91C4C0095CC49 /* BookDetails.storyboard in Resources */,
 				42DBD88B24D3FDD5006AF723 /* TableViewCell.xib in Resources */,
+				E60EEC7524D9013B00FD179B /* Signup.storyboard in Resources */,
 				D75DB6F124C6D51B00263F03 /* BookCollectionViewCell.xib in Resources */,
 				E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */,
 				42CC89CE24CA0B9F006E6DCD /* TotalPay.xib in Resources */,
@@ -557,11 +610,13 @@
 				42CC89B424CA06CF006E6DCD /* BagVC.swift in Sources */,
 				42CC89DC24CA2A38006E6DCD /* CheckoutDoneVC.swift in Sources */,
 				427FA17124C198C2008E3D40 /* BooksData.swift in Sources */,
+				428EA24224D7C3280048B44B /* Models.swift in Sources */,
 				426A417B24CE9A63007633CF /* ComponentListCell.swift in Sources */,
 				AB61971924D178BB0092EB8B /* DetailViewController.swift in Sources */,
 				42CC89D824CA25BC006E6DCD /* SignUpVC.swift in Sources */,
 				D777E3EC24D8B07900CC24AD /* MapViewController.swift in Sources */,
 				42CC89C524CA0B60006E6DCD /* BooksLocation.swift in Sources */,
+				42DBB6D624DC80D400A998C3 /* ResultnyaTBC.swift in Sources */,
 				42DBD88D24D480DF006AF723 /* Extension Date.swift in Sources */,
 				AB624AEE24D91C4C0095CC49 /* SynopsisLenderNotesCell.swift in Sources */,
 				AB61971B24D178FD0092EB8B /* ReturnViewController.swift in Sources */,
@@ -571,6 +626,7 @@
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
 				ABAF3DF924C1421E00B704B7 /* ViewController.swift in Sources */,
 				ABAF3DF524C1421E00B704B7 /* AppDelegate.swift in Sources */,
+				E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */,
 				D73CFDA824C95C16001367D9 /* SearchBookTableViewController.swift in Sources */,
 				AB61971E24D179900092EB8B /* StatusBorrowing.swift in Sources */,
 				D76F046024C73FC400EC3999 /* AllBookTableViewCell.swift in Sources */,
@@ -579,21 +635,25 @@
 				420147B724C9E338007C7693 /* bookCollection.swift in Sources */,
 				42CC89B724CA06F8006E6DCD /* Extention Button.swift in Sources */,
 				ABAF3DF724C1421E00B704B7 /* SceneDelegate.swift in Sources */,
+				E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */,
 				D75DB6F024C6D51B00263F03 /* BookCollectionViewCell.swift in Sources */,
 				AB6F12C924CAC525007929BA /* User+CoreDataClass.swift in Sources */,
 				D75DB6EC24C6D50700263F03 /* BookTableViewCell.swift in Sources */,
 				D73CFDAA24C95C27001367D9 /* SearchLocationTableViewController.swift in Sources */,
 				D76F045A24C73F9900EC3999 /* AllBookCollectionViewCell.swift in Sources */,
 				4228DFA024CEDE99003E82E2 /* Extension Collection Cell.swift in Sources */,
+				E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */,
 				AB6F12C724CAC525007929BA /* Book+CoreDataClass.swift in Sources */,
 				AB61970824D1536C0092EB8B /* CurrentViewController.swift in Sources */,
 				D75DB6F324C6D6FC00263F03 /* HomeViewController.swift in Sources */,
 				D76F046424C746D000EC3999 /* AllGenreCollectionViewCell.swift in Sources */,
+				E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */,
 				E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */,
 				E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
 				AB6F12CA24CAC525007929BA /* User+CoreDataProperties.swift in Sources */,
 				D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */,
+				42DBB6D424DC7C9100A998C3 /* ResultTableView.swift in Sources */,
 				ABA282A624C7F0C5002719DE /* CoreDataHelper.swift in Sources */,
 				425C958124C1B0D500E807A1 /* CartView.swift in Sources */,
 				427FA17324C19C02008E3D40 /* OtherBooksReference.swift in Sources */,
@@ -737,15 +797,15 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.BiblioLand;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
+				PRODUCT_NAME = Bibl.io;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -759,15 +819,15 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.BiblioLand;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = id.appleacademy.Biblio;
+				PRODUCT_NAME = Bibl.io;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

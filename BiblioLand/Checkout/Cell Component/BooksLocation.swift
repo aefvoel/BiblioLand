@@ -48,7 +48,7 @@ class BooksLocation: UITableViewCell {
         locationManager = CLLocationManager()
         locationManager.delegate = self
 
-        shadowDecorate()
+        TableShadowDecorate()
         pickingMap()
         getAccessUserLocation()
         createPickerView()
@@ -57,8 +57,6 @@ class BooksLocation: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -66,9 +64,6 @@ class BooksLocation: UITableViewCell {
 extension BooksLocation: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation :CLLocation = locations[0] as CLLocation
-
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
 
         userLat = userLocation.coordinate.latitude
         userLong = userLocation.coordinate.longitude
@@ -78,18 +73,28 @@ extension BooksLocation: CLLocationManagerDelegate {
             if (error != nil){
                 print("error in reverseGeocode")
             }
+            guard let placemark = placemarks else {
+                return
+            }
             
-//            let placemark = placemarks! as [CLPlacemark]
-//            if placemark.count>0{
-//                let placemark = placemarks![0]
-//                print(placemark.locality!)
-//                print(placemark.administrativeArea!)
-//                print(placemark.country!)
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: self.userLat, longitude: self.userLong)
+            annotation.subtitle = "Book Location"
+            self.mapView.addAnnotation(annotation)
 
-//                self.labelAdd.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
-//            }
+            let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+            self.mapView.setRegion(region, animated: true)
+            
+            if placemark.count>0{
+                let placemark = placemarks![0]
+                print(placemark.locality!)
+                print(placemark.administrativeArea!)
+                print(placemark.country!)
+
+                self.locationLavel.text = "\(placemark.thoroughfare!), \(placemark.locality!)"
+            }
         }
-
     }
         
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -107,21 +112,13 @@ extension BooksLocation {
     
     func pickingMap() {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: -6.302423, longitude: 106.652202)
-        annotation.title = "BSD Green Office Park 9"
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: userLat, longitude: userLong)
         annotation.subtitle = "Book Location"
         mapView.addAnnotation(annotation)
-        
-        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
         mapView.setRegion(region, animated: true )
-        
-        let bookLocation = CLLocation(latitude: -6.302423, longitude: 106.652202)
-        let userLoc = CLLocation(latitude: userLat, longitude: userLong)
-        
-        let distance = bookLocation.distance(from: userLoc)
-        let distanceKm = Int(distance) / 1000
-            
-        locationLavel.text = "BSD Green Office Park, Tanggerang (~\(distanceKm/1000) Km)"
     }
     
     @objc func timePickerChange() {

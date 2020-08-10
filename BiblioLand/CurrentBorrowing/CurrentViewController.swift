@@ -90,5 +90,9 @@ extension CurrentViewController: UITableViewDelegate, UITableViewDataSource {
         return 130
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 

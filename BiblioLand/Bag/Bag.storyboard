@@ -42,15 +42,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JTu-gg-Ct6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="-1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JTu-gg-Ct6">
                                 <rect key="frame" x="20" y="40" width="383" height="740"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="383" id="IpH-4u-PgI"/>
+                                    <constraint firstAttribute="height" constant="740" id="hwM-nc-a9W"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCheckout" rowHeight="108" id="Zax-qF-clB" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCheckout" rowHeight="108" id="Zax-qF-clB" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zax-qF-clB" id="4nE-KB-maV" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zax-qF-clB" id="4nE-KB-maV" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -63,8 +66,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wl2-dO-n1D">
-                                                    <rect key="frame" x="11" y="11" width="402" height="328"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="11" y="11" width="372" height="328"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="BKB-c3-lke">
                                                         <size key="itemSize" width="124" height="305"/>
@@ -76,7 +79,7 @@
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="" id="QOu-Ns-X12" customClass="bookCollection" customModule="BiblioLand" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="16.5" width="124" height="295"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I8W-Lk-7Fx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="295"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
@@ -93,10 +96,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-g6-e1h">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-g6-e1h">
                                 <rect key="frame" x="20" y="788" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Hijau"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ies-vV-233"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Proceed to Checkout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +112,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JTu-gg-Ct6" firstAttribute="leading" secondItem="e1W-rp-INp" secondAttribute="leading" constant="20" id="9Md-aH-oQj"/>
+                            <constraint firstItem="e1W-rp-INp" firstAttribute="trailing" secondItem="Wa4-g6-e1h" secondAttribute="trailing" constant="20" id="Jbw-wd-S7V"/>
+                            <constraint firstItem="e1W-rp-INp" firstAttribute="trailing" secondItem="JTu-gg-Ct6" secondAttribute="trailing" constant="11" id="Vw4-DZ-MeY"/>
+                            <constraint firstItem="Wa4-g6-e1h" firstAttribute="top" secondItem="JTu-gg-Ct6" secondAttribute="bottom" constant="8" id="bMS-fJ-vCy"/>
+                            <constraint firstItem="JTu-gg-Ct6" firstAttribute="top" secondItem="Rf8-8p-E2D" secondAttribute="top" constant="40" id="dlF-ss-5gA"/>
+                            <constraint firstItem="e1W-rp-INp" firstAttribute="bottom" secondItem="Wa4-g6-e1h" secondAttribute="bottom" constant="24" id="khw-OK-xRe"/>
+                            <constraint firstItem="Wa4-g6-e1h" firstAttribute="leading" secondItem="e1W-rp-INp" secondAttribute="leading" constant="20" id="uUU-SF-CCD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e1W-rp-INp"/>
                     </view>
                     <navigationItem key="navigationItem" id="mq7-bh-NPR"/>
