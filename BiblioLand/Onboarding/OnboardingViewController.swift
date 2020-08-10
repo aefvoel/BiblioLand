@@ -21,6 +21,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     var titles = ["Find the book you\nwant to read", "Borrowing is now\neasy and safe", "Lend your books to\nsomeone else"]
     var descriptions = ["Find the book you want to borrow based on\nthe book title, author's name, book genre or\nbook location.", "Find the best book lender, easy-to-borrow\nand also the convenience of borrowing.", "Have a book that has finished reading and\nwants to lend it to be useful? This is the\nplatform."]
     var images = ["onboarding_1", "onboarding_2", "onboarding_3"]
+    var buttonText = ["Next", "Next", "Get Started"]
     
 //  dynamic width and height of scrollview
     override func viewDidLayoutSubviews() {
@@ -58,6 +59,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         for index in 0..<titles.count {
             frame.origin.x = scrollWidth * CGFloat(index)
             frame.size = CGSize(width: scrollWidth, height: scrollHeight)
+
             
         let slide = UIView(frame: frame)
             
@@ -82,32 +84,39 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         onboardingDescription.font = UIFont.systemFont(ofSize: 17.0)
         onboardingDescription.textColor = UIColor(red: 60.0/255.0, green: 60.0/255.0, blue: 67.0/255.0, alpha: 60.0/100.0)
         onboardingDescription.text = descriptions[index]
-                        
+            
 //      Create skip button
-        let skipButton = UIButton(type: .system)
+        if index != 2 {
+            let skipButton = UIButton(type: .system)
+        
 
 //      Button position
-        skipButton.frame = CGRect(x: 340, y: 50, width: 54, height: 44)
+            skipButton.frame = CGRect(x: 340, y: 50, width: 54, height: 44)
                             
 //      Set text on button
-        skipButton.setTitle("Skip", for: .normal)
+            skipButton.setTitle("Skip", for: .normal)
                         
 //      Set custom font
-        skipButton.titleLabel!.font = UIFont(name: "SystemFont", size: 17.0)
-        skipButton.setTitleColor(UIColor(red: 37.0/255.0, green: 125.0/255.0, blue: 121.0/255.0, alpha: 100.0/100.0), for: .normal)
-                        
+            skipButton.titleLabel!.font = UIFont(name: "SystemFont", size: 17.0)
+            skipButton.setTitleColor(UIColor(red: 37.0/255.0, green: 125.0/255.0, blue: 121.0/255.0, alpha: 100.0/100.0), for: .normal)
+            slide.addSubview(skipButton)
+
+        }
 //      Set back button
-        let backButton = UIButton(type: .custom)
-        backButton.setImage(#imageLiteral(resourceName: "back_button"), for: .normal)
-        backButton.frame = CGRect(x: 20, y: 60, width: 25, height: 25)
-                        
+        if index != 0 {
+            let backButton = UIButton(type: .custom)
+            backButton.setImage(#imageLiteral(resourceName: "back_button"), for: .normal)
+            backButton.frame = CGRect(x: 20, y: 60, width: 25, height: 25)
+            slide.addSubview(backButton)
+
+        }
+            
         slide.addSubview(onboardingImage)
         slide.addSubview(onboardingTitle)
         slide.addSubview(onboardingDescription)
-        slide.addSubview(skipButton)
-        slide.addSubview(backButton)
         scrollView.addSubview(slide)
         }
+        
         
 //      set width of scrollview to accomodate all the slides
         scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(titles.count), height: scrollHeight)
@@ -123,7 +132,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
 //      indicator
         @IBAction func pageChanged(_sender: Any) {
         scrollView!.scrollRectToVisible(CGRect(x: scrollWidth * CGFloat ((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
-            }
+            
+        }
             
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
          setIndicatorForCurrentPage()
@@ -133,5 +143,6 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
          let page = (scrollView?.contentOffset.x)!/scrollWidth
                 pageControl?.currentPage = Int(page)
     }
+    
     
 }

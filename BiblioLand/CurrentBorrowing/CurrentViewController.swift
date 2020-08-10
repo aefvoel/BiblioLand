@@ -86,6 +86,11 @@ extension CurrentViewController: UITableViewDelegate, UITableViewDataSource {
             return cell2
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "DetailBookingSegue", sender: self)
+
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
 

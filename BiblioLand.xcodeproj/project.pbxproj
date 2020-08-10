@@ -86,6 +86,7 @@
 		D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */; };
 		D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */; };
 		D777E3EC24D8B07900CC24AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777E3EB24D8B07900CC24AD /* MapViewController.swift */; };
+		D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */; };
 		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
 		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
 		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
@@ -174,6 +175,7 @@
 		D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGenreTableViewCell.swift; sourceTree = "<group>"; };
 		D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGenreTableViewCell.xib; sourceTree = "<group>"; };
 		D777E3EB24D8B07900CC24AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				AB61971224D158500092EB8B /* BookBorrowing.xib */,
 				AB61971C24D179900092EB8B /* StatusBorrowing.swift */,
 				AB61971D24D179900092EB8B /* StatusBorrowing.xib */,
+				D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				AB624AEE24D91C4C0095CC49 /* SynopsisLenderNotesCell.swift in Sources */,
 				AB61971B24D178FD0092EB8B /* ReturnViewController.swift in Sources */,
 				42CC89B924CA091E006E6DCD /* Extension View.swift in Sources */,
+				D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */,
 				429D95A124D55F9A00A39278 /* MapsViewVC.swift in Sources */,
 				AB624AEF24D91C4C0095CC49 /* BookDetailsVC.swift in Sources */,
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
