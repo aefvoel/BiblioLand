@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 2
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,14 +51,19 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath)
+        if indexPath.row == 0{
+           let cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell", for: indexPath)
 
             return cell
+        }
+            
+        else {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath) as! StatusTableViewCell
+         
+            return cell2
+        }
+            
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-
-    }
+    
 }
