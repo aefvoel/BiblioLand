@@ -79,7 +79,7 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
             let photo = record["photo"] as! CKAsset
             let data = try? Data(contentsOf: photo.fileURL!)
             let price = (record["price_per_day"] as! NSNumber).stringValue
-            self.books.append(Books(bookTitle: record["title"]!, bookPrice: "Rp. \(price)", bookImg: UIImage(data: data!)!))
+            self.books.append(Books(bookId: record.recordID.recordName, bookTitle: record["title"]!, bookPrice: "Rp. \(price)", bookImg: UIImage(data: data!)!))
             self.genres.append(Genre(genreName: record["category"]!))
                 
         }
@@ -109,23 +109,23 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func insertData(){
-        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
-        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
-        
-        genres.append(Genre(genreName: "All Genre"))
-        genres.append(Genre(genreName: "Business"))
-        genres.append(Genre(genreName: "Fiction"))
-        genres.append(Genre(genreName: "Fantasy"))
-        genres.append(Genre(genreName: "Mistery"))
-        genres.append(Genre(genreName: "Romance"))
-    }
+//    func insertData(){
+//        books.append(Books(bookTitle: "Queen's Peril Book 1", bookPrice: "Rp 1000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 2", bookPrice: "Rp 1500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 3", bookPrice: "Rp 2000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 4", bookPrice: "Rp 2500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 5", bookPrice: "Rp 3000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 6", bookPrice: "Rp 3500", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 7", bookPrice: "Rp 4000", bookImg: UIImage(named: "queensperil.jpg")!))
+//        books.append(Books(bookTitle: "Queen's Peril Book 8", bookPrice: "Rp 4500", bookImg: UIImage(named: "queensperil.jpg")!))
+//
+//        genres.append(Genre(genreName: "All Genre"))
+//        genres.append(Genre(genreName: "Business"))
+//        genres.append(Genre(genreName: "Fiction"))
+//        genres.append(Genre(genreName: "Fantasy"))
+//        genres.append(Genre(genreName: "Mistery"))
+//        genres.append(Genre(genreName: "Romance"))
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavbar()
@@ -252,14 +252,16 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
 }
 
 struct Books {
+    var bookId: String
     var bookTitle: String
     var bookPrice: String
     var bookImg: UIImage
     
-    init(bookTitle: String, bookPrice: String, bookImg: UIImage) {
+    init(bookId: String, bookTitle: String, bookPrice: String, bookImg: UIImage) {
         self.bookTitle = bookTitle
         self.bookPrice = bookPrice
         self.bookImg = bookImg
+        self.bookId = bookId
     }
 }
 

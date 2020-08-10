@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="343" y="-27"/>
         </scene>
-        <!--BookDetails-->
+        <!--Profile-->
         <scene sceneID="d3r-Ac-NDI">
             <objects>
-                <viewControllerPlaceholder storyboardName="BookDetails" id="aRt-Dw-SDO" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="aRt-Dw-SDO" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Vmx-OW-kgk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLl-Lp-0Hn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

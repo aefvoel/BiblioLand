@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CloudKit
 
 class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var bookDetailsTable: UITableView!
     
-    var bookInfo = [BookInfo]()
+    @IBOutlet weak var bookDetailsTable: UITableView!
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    
+    var bookInfo = BookInfo()
     var seeMoreisClicked = false
     
     override func viewDidLoad() {
@@ -30,8 +32,34 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         //supaya mau dynamic but still not working
         bookDetailsTable.rowHeight = UITableView.automaticDimension
         bookDetailsTable.estimatedRowHeight = 600
-
+        
+        retrieveData()
         // Do any additional setup after loading the view.
+    }
+    
+    func retrieveData(){
+        
+        if let bookID = UserDefaults.standard.string(forKey: "bookID") {
+            let recordID = CKRecord.ID(recordName: bookID)
+            privateDatabase.fetch(withRecordID: recordID) { (fetchedRecord, error) in
+                if error == nil {
+                    let photo = fetchedRecord?["photo"] as! CKAsset
+                    let data = try? Data(contentsOf: photo.fileURL!)
+                    
+                    self.bookInfo.bookTitle = fetchedRecord?["title"] as! String
+                    self.bookInfo.bookAuthor = fetchedRecord?["author"] as! String
+                    self.bookInfo.bookImage = UIImage(data: data!)!
+                    self.bookInfo.bookPrice = fetchedRecord?["price_per_day"] as! Int
+                    self.bookInfo.bookDeposit = fetchedRecord?["price_deposit"] as! Int
+                    self.bookInfo.bookSynopsis = fetchedRecord?["desc"] as! String
+                    self.bookDetailsTable.reloadData()
+                    //TODO
+                } else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+        
     }
     
     func setupViewSynLenderNotes(){
@@ -67,7 +95,7 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let label = UILabel()
         label.frame = CGRect.init(x: 20, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-150)
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
-
+        
         headerView.addSubview(label)
         
         headerView.backgroundColor = .clear
@@ -87,34 +115,49 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
             
-            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! bookInfoCell
             cell.selectionStyle = .none
-             cell.layer.shadowColor = UIColor.black.cgColor
-             cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-             cell.layer.shadowOpacity = 0.2
-             cell.layer.shadowOffset = .zero
-             cell.layer.shadowRadius = 5
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+            cell.layer.shadowOpacity = 0.2
+            cell.layer.shadowOffset = .zero
+            cell.layer.shadowRadius = 5
+            
+            cell.bookAuthorLbl.text = bookInfo.bookAuthor
+            cell.bookTitleLbl.text = bookInfo.bookTitle
+            cell.bookImg.image = bookInfo.bookImage
+            cell.bookPriceLbl.text = "Rp. \(bookInfo.bookPrice)"
+            cell.bookDepositLbl.text = "Rp. \(bookInfo.bookDeposit)"
+            return cell
+        }
+        else  if indexPath.section == 1 {
+            
+            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: SynopsisLenderNotesCell.identifier, for: indexPath) as! SynopsisLenderNotesCell
+            cell.selectionStyle = .none
+            cell.descriptionTxtView.text = bookInfo.bookSynopsis
+            
+            return cell
+        }
+        else  if indexPath.section == 2 {
+            
+            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: SynopsisLenderNotesCell.identifier, for: indexPath) as! SynopsisLenderNotesCell
+            cell.selectionStyle = .none
+            cell.descriptionTxtView.text = bookInfo.bookSynopsis
+            
             return cell
         }
         else if indexPath.section == 3{
-
+            
             let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: LenderCell.identifier, for: indexPath) as! LenderCell
             cell.selectionStyle = .none
-
-            return cell
-        }
-        else if indexPath.section == 4{
             
-            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
-            cell.selectionStyle = .none
-
             return cell
         }
         else {
             
-            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: SynopsisLenderNotesCell.identifier, for: indexPath) as! SynopsisLenderNotesCell
+            let cell = bookDetailsTable.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath) as! ButtonCell
             cell.selectionStyle = .none
-
+            
             return cell
         }
     }
@@ -135,35 +178,22 @@ class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
-
+    
 }
 
 struct BookInfo{
-    let bookTitle: String
-    let bookAuthor: String
-    let bookImage: UIImage
-    let bookLanguage: String
-    let bookCondition: String
-    let bookPages: String
-    let bookEdition: String
-    let bookPrice: String
-    let bookDeposit: String
-    let bookSynopsis: String
-    let bookNotes: String
+    var bookTitle: String = ""
+    var bookAuthor: String = ""
+    var bookImage: UIImage = UIImage.init(named: "Book2")!
+    let bookLanguage: String = ""
+    let bookCondition: String = ""
+    let bookPages: String = ""
+    let bookEdition: String = ""
+    var bookPrice: Int = 0
+    var bookDeposit: Int = 0
+    var bookSynopsis: String = ""
+    var bookNotes: String = ""
     
-    init(bookTitle: String, bookAuthor: String, bookImage: UIImage, bookLanguage: String, bookCondition: String, bookPages: String, bookEdition: String, bookPrice: String, bookDeposit: String, bookSynopsis: String, bookNotes: String) {
-        self.bookTitle = bookTitle
-        self.bookAuthor = bookAuthor
-        self.bookImage = bookImage
-        self.bookLanguage = bookLanguage
-        self.bookCondition = bookCondition
-        self.bookPages = bookPages
-        self.bookEdition = bookEdition
-        self.bookPrice = bookPrice
-        self.bookDeposit = bookDeposit
-        self.bookSynopsis = bookSynopsis
-        self.bookNotes = bookNotes
-    }
 }
 
 class bookInfoCell: UITableViewCell{

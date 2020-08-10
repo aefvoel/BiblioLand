@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import CloudKit
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var ProfileTable: UITableView!
     
     var bookWishlist = [BookWishlist]()
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    
+    var profileData = Profile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViewReview()
         setupViewWishlist()
         insertData()
@@ -25,10 +29,28 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ProfileTable.dataSource = self
         ProfileTable.separatorStyle = .none
         
+        retrieveUser()
+        
         
         // Do any additional setup after loading the view.
     }
     
+    func retrieveUser(){
+        if let userCloudID = UserDefaults.standard.string(forKey: "userID") {
+            let recordID = CKRecord.ID(recordName: userCloudID)
+            privateDatabase.fetch(withRecordID: recordID) { (fetchedRecord, error) in
+                if error == nil {
+                    self.profileData.profileName = fetchedRecord?["name"] as! String
+                    self.profileData.profileLocation = fetchedRecord?["address"] as! String
+                    
+                    self.ProfileTable.reloadData()
+                    //TODO
+                } else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
     func insertData(){
         bookWishlist.append(BookWishlist(bookTitle: "Queen's Peril Book 1", bookImg: UIImage(named: "queensperil.jpg")!))
         bookWishlist.append(BookWishlist(bookTitle: "Queen's Peril Book 2", bookImg: UIImage(named: "queensperil.jpg")!))
@@ -56,11 +78,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 180))
-
+        
         let label = UILabel()
         label.frame = CGRect.init(x: 20, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-150)
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
-
+        
         headerView.addSubview(label)
         
         headerView.backgroundColor = .clear
@@ -78,16 +100,19 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
-            let cell = ProfileTable.dequeueReusableCell(withIdentifier: "ProfileInfoCell", for: indexPath)
-             cell.selectionStyle = .none
+            let cell = ProfileTable.dequeueReusableCell(withIdentifier: "ProfileInfoCell", for: indexPath) as! ProfileInfo
+            cell.selectionStyle = .none
             
-             cell.layer.shadowColor = UIColor.black.cgColor
-             cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-             cell.layer.shadowOpacity = 0.2
-             cell.layer.shadowOffset = .zero
-             cell.layer.shadowRadius = 5
-             
-             return cell
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+            cell.layer.shadowOpacity = 0.2
+            cell.layer.shadowOffset = .zero
+            cell.layer.shadowRadius = 5
+            
+            cell.profileNameLbl.text = profileData.profileName
+            cell.profileLocationLbl.text = profileData.profileLocation
+            
+            return cell
         }
         else if indexPath.section == 1{
             let cell = ProfileTable.dequeueReusableCell(withIdentifier: WishlistCell.identifier, for: indexPath) as! WishlistCell
@@ -101,7 +126,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
@@ -112,18 +137,18 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return 300
         }
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 struct BookWishlist{
@@ -137,21 +162,12 @@ struct BookWishlist{
 }
 
 struct Profile {
-    let profileImg: UIImage
-    let profileName: String
-    let profileLocation: String
-    let profileBorrow: String
-    let profileRating: String
-    let profileOntime: String
-    
-    init(profileImg: UIImage, profileName: String, profileLocation: String, profileBorrow: String, profileRating: String, profileOntime: String){
-        self.profileImg = profileImg
-        self.profileName = profileName
-        self.profileLocation = profileLocation
-        self.profileBorrow = profileBorrow
-        self.profileRating = profileRating
-        self.profileOntime = profileOntime
-    }
+    let profileImg: UIImage = UIImage(named: "queensperil")!
+    var profileName: String = ""
+    var profileLocation: String = ""
+    let profileBorrow: String = ""
+    let profileRating: String = ""
+    let profileOntime: String = ""
 }
 
 class ProfileInfo: UITableViewCell {

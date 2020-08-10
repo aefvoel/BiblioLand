@@ -74,8 +74,9 @@ class AllBookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     //        delegate?.viewAllGame(data: games)
 
            if let tempIndex = indexPath {
-              print("Got clicked on index: \(tempIndex)!")
+              print("Got clicked on index: \(books[tempIndex.row].bookId)!")
                 didSelectItemAction?(tempIndex)
+            UserDefaults.standard.set(books[tempIndex.row].bookId, forKey: "bookID")
 
            }
         }
