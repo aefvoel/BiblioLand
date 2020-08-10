@@ -20,6 +20,7 @@ class BookBorrowing: UITableViewCell {
             bookImage.clipsToBounds = true
         }
     }
+    @IBOutlet weak var returnBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
@@ -30,4 +31,10 @@ class BookBorrowing: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        returnBtn.layer.cornerRadius = 7
+    }
 }

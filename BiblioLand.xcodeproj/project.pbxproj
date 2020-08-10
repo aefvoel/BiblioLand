@@ -95,6 +95,8 @@
 		E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7824D90AA600FD179B /* SignupButton.swift */; };
 		E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7A24D90AB400FD179B /* CustomTextView.swift */; };
 		E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7C24DA54A000FD179B /* SignInViewController.swift */; };
+		D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */; };
+		D7A04E1F24E0F995006ACC9D /* Status2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1E24E0F995006ACC9D /* Status2TableViewCell.swift */; };
 		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
 		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
 		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
@@ -187,6 +189,8 @@
 		D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGenreTableViewCell.swift; sourceTree = "<group>"; };
 		D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllGenreTableViewCell.xib; sourceTree = "<group>"; };
 		D777E3EB24D8B07900CC24AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		D7A04E1E24E0F995006ACC9D /* Status2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status2TableViewCell.swift; sourceTree = "<group>"; };
 		E60EEC7424D9013B00FD179B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		E60EEC7624D9017A00FD179B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E60EEC7824D90AA600FD179B /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				AB61971224D158500092EB8B /* BookBorrowing.xib */,
 				AB61971C24D179900092EB8B /* StatusBorrowing.swift */,
 				AB61971D24D179900092EB8B /* StatusBorrowing.xib */,
+				D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */,
+				D7A04E1E24E0F995006ACC9D /* Status2TableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 				AB624AEE24D91C4C0095CC49 /* SynopsisLenderNotesCell.swift in Sources */,
 				AB61971B24D178FD0092EB8B /* ReturnViewController.swift in Sources */,
 				42CC89B924CA091E006E6DCD /* Extension View.swift in Sources */,
+				D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */,
 				429D95A124D55F9A00A39278 /* MapsViewVC.swift in Sources */,
 				AB624AEF24D91C4C0095CC49 /* BookDetailsVC.swift in Sources */,
 				42CC89DA24CA25CE006E6DCD /* SignInVC.swift in Sources */,
@@ -649,6 +656,7 @@
 				D76F046424C746D000EC3999 /* AllGenreCollectionViewCell.swift in Sources */,
 				E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */,
 				E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */,
+				D7A04E1F24E0F995006ACC9D /* Status2TableViewCell.swift in Sources */,
 				E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */,
 				ABAF3DFF24C1421E00B704B7 /* BiblioLand.xcdatamodeld in Sources */,
 				AB6F12CA24CAC525007929BA /* User+CoreDataProperties.swift in Sources */,

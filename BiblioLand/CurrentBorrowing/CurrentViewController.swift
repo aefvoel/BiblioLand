@@ -33,6 +33,7 @@ class CurrentViewController: UIViewController {
         
         listCurrentBook.delegate = self
         listCurrentBook.dataSource = self
+    
         
 //        tableView.register(UINib(nibName: "BookBorrowing", bundle: nil), forCellReuseIdentifier: "BookBorrowing")
 
@@ -83,11 +84,18 @@ extension CurrentViewController: UITableViewDelegate, UITableViewDataSource {
             cell2.booksTitle.text = dataCheckout[indexPath.section].booksData?[indexPath.row].bookTitle
             cell2.borrowerNAme.text = dataCheckout[indexPath.section].borrowers?.boorowersName
             
+            cell2.selectionStyle = .none
+
             return cell2
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "DetailBookingSegue", sender: self)
+
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 145
 
     }
     
