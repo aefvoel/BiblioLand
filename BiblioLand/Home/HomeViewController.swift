@@ -146,11 +146,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.section == 4 {
             let cell = table.dequeueReusableCell(withIdentifier: AllBookTableViewCell.identifier, for: indexPath ) as! AllBookTableViewCell
             cell.configure(with: books)
+            
+            cell.didSelectItemAction = { [weak self] indexPath in
+                self?.performSegue(withIdentifier: "BookDetailsSegue", sender: self)
+            }
                 
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier, for: indexPath ) as! BookTableViewCell
             cell.configure(with: books)
+            
+            cell.didSelectItemAction = { [weak self] indexPath in
+                self?.performSegue(withIdentifier: "BookDetailsSegue", sender: self)
+            }
                 
             return cell
         }

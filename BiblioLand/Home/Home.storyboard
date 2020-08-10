@@ -108,6 +108,7 @@
                         <outlet property="table" destination="2yQ-HD-jrT" id="eVy-pe-sc6"/>
                         <segue destination="aq6-Gi-ZDf" kind="show" id="273-RW-nx5"/>
                         <segue destination="dua-9b-4xo" kind="show" id="o7H-Sd-0i1"/>
+                        <segue destination="Uqd-Jz-FsD" kind="show" identifier="BookDetailsSegue" id="Q9H-PB-omu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoT-Yy-bAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -149,6 +150,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyz-cg-0gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3628" y="504"/>
+        </scene>
+        <!--BookDetails-->
+        <scene sceneID="XB0-eU-r1a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BookDetails" id="Uqd-Jz-FsD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nxB-br-8eS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Le4-d4-T7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="-378"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="aba-1f-QYW">
