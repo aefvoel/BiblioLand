@@ -135,3 +135,33 @@ struct BookWishlist{
         self.bookImg = bookImg
     }
 }
+
+struct Profile {
+    let profileImg: UIImage
+    let profileName: String
+    let profileLocation: String
+    let profileBorrow: String
+    let profileRating: String
+    let profileOntime: String
+    
+    init(profileImg: UIImage, profileName: String, profileLocation: String, profileBorrow: String, profileRating: String, profileOntime: String){
+        self.profileImg = profileImg
+        self.profileName = profileName
+        self.profileLocation = profileLocation
+        self.profileBorrow = profileBorrow
+        self.profileRating = profileRating
+        self.profileOntime = profileOntime
+    }
+}
+
+class ProfileInfo: UITableViewCell {
+    
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var profileNameLbl: UILabel!
+    @IBOutlet weak var profileLocationLbl: UILabel!
+    @IBOutlet weak var profileBorrowLbl: UILabel!
+    @IBOutlet weak var profileRatingLbl: UILabel!
+    @IBOutlet weak var profileOntimeLbl: UILabel!
+    
+    
+}

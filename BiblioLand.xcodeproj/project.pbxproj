@@ -395,8 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				AB624ADF24D91C4C0095CC49 /* BookDetails.storyboard */,
-				AB624AE024D91C4C0095CC49 /* Cell */,
 				AB624AE724D91C4C0095CC49 /* BookDetailsVC.swift */,
+				AB624AE024D91C4C0095CC49 /* Cell */,
 			);
 			path = "Book Details";
 			sourceTree = "<group>";

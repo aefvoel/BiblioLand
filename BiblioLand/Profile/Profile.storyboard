@@ -32,7 +32,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileInfoCell" rowHeight="346" id="UU4-F3-WIK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileInfoCell" rowHeight="346" id="UU4-F3-WIK" customClass="ProfileInfo" customModule="Bibl_io">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="346"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UU4-F3-WIK" id="egl-Tq-5AO">
@@ -109,6 +109,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="profileBorrowLbl" destination="btp-YS-G9d" id="AEG-aq-QXB"/>
+                                            <outlet property="profileImg" destination="rTj-lf-V2R" id="Iry-9z-QuO"/>
+                                            <outlet property="profileLocationLbl" destination="kXe-e6-L7B" id="kkR-om-ULK"/>
+                                            <outlet property="profileNameLbl" destination="1jG-Lj-ezJ" id="Aqa-HR-tfc"/>
+                                            <outlet property="profileOntimeLbl" destination="ASc-Of-P1O" id="b3m-XE-DVx"/>
+                                            <outlet property="profileRatingLbl" destination="A0z-cC-9pg" id="vCc-IF-hw3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
