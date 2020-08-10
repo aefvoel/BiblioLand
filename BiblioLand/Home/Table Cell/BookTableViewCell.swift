@@ -18,6 +18,8 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var didSelectItemAction: ((IndexPath) -> Void)?
+    
     var books = [Books]()
     
     func configure(with books: [Books]){
@@ -52,6 +54,8 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         cell.layer.shadowOffset = .zero
         cell.layer.shadowRadius = 5
         
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        
         cell.configure(with: books[indexPath.row])
         
         return cell
@@ -60,4 +64,18 @@ class BookTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 119, height: 258)
     }
+    
+    @objc func tap(_ sender: UITapGestureRecognizer) {
+
+           let location = sender.location(in: self.collectionView)
+           let indexPath = self.collectionView.indexPathForItem(at: location)
+            
+    //        delegate?.viewAllGame(data: games)
+
+           if let tempIndex = indexPath {
+              print("Got clicked on index: \(tempIndex)!")
+                didSelectItemAction?(tempIndex)
+
+           }
+        }
 }
