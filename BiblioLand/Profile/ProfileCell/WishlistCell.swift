@@ -32,8 +32,6 @@ class WishlistCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewD
         collectionView.register(WishlistCollectionCell.nib(), forCellWithReuseIdentifier: WishlistCollectionCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        print("Data: \(bookWishlist)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,7 +46,7 @@ class WishlistCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WishlistCollectionCell.identifier, for: indexPath) as! WishlistCollectionCell
-        
+                
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         cell.layer.shadowOpacity = 0.2
@@ -60,5 +58,7 @@ class WishlistCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 130, height: 265)
+    }
 }

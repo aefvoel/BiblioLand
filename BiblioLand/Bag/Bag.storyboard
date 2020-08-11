@@ -12,7 +12,7 @@
         <!--BagVC-->
         <scene sceneID="QBq-Fh-y8F">
             <objects>
-                <viewController storyboardIdentifier="CartVC" id="GQd-Ew-vWq" customClass="BagVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartVC" id="GQd-Ew-vWq" customClass="BagVC" customModule="Bibl_io" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rf8-8p-E2D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,15 +50,15 @@
                                     <constraint firstAttribute="height" constant="740" id="hwM-nc-a9W"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCheckout" rowHeight="108" id="Zax-qF-clB" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCheckout" rowHeight="108" id="Zax-qF-clB" customClass="BookCheckout" customModule="Bibl_io" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zax-qF-clB" id="4nE-KB-maV" customClass="BookCheckout" customModule="BiblioLand" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zax-qF-clB" id="4nE-KB-maV" customClass="BookCheckout" customModule="Bibl_io" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ListCell" rowHeight="350" id="LKI-MM-rZG" customClass="ComponentListCell" customModule="BiblioLand" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ListCell" rowHeight="350" id="LKI-MM-rZG" customClass="ComponentListCell" customModule="Bibl_io" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="136" width="383" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LKI-MM-rZG" id="Ihp-dS-WGX">
@@ -77,7 +77,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="" id="QOu-Ns-X12" customClass="bookCollection" customModule="BiblioLand" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="" id="QOu-Ns-X12" customClass="bookCollection" customModule="Bibl_io" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="16.5" width="124" height="295"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I8W-Lk-7Fx">

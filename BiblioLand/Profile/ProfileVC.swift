@@ -91,6 +91,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.section == 1{
             let cell = ProfileTable.dequeueReusableCell(withIdentifier: WishlistCell.identifier, for: indexPath) as! WishlistCell
+            
             cell.bookWishlist = bookWishlist
             return cell
         }
@@ -98,7 +99,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let cell = ProfileTable.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as! ReviewCell
             return cell
         }
-        
     }
     
 

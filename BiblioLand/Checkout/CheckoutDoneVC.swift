@@ -31,7 +31,7 @@ class CheckoutDoneVC: UIViewController {
         bottomSection.roundedView()
         
         pickupDate.text = "10 July 2020"
-        deliveryMethod.text = "Ojek Online Lah Gais"
+        deliveryMethod.text = "Ojek DQ Same Day"
     }
     
     override func viewDidLoad() {
