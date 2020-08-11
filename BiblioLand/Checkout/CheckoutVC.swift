@@ -17,6 +17,9 @@ class CheckoutVC: UIViewController {
     var borrowers = "DQ"
     var creator = "Dicky Geraldi"
     
+    var totalPick = 0
+    var totalFee = 0
+            
     func registeringUINib() {
         let nibBorrowCell = UINib(nibName: "BorrowBooksCell", bundle: nil)
         listCheckout.register(nibBorrowCell, forCellReuseIdentifier: "BorrowBooksCell")
@@ -118,12 +121,14 @@ extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
                 cell.harga.append(book.pricing!)
             }
             
+            cell.delegate = self
             return cell
         } else if indexPath.row == (booksCount + 1) {
             guard let cell = listCheckout.dequeueReusableCell(withIdentifier: "BooksLocation", for: indexPath) as? BooksLocation else {
                 do {fatalError("Unable to create component")}
             }
             
+            cell.delegate = self
             return cell
         } else if indexPath.row == (booksCount + 2) {
             guard let cell = listCheckout.dequeueReusableCell(withIdentifier: "PaymentMethod", for: indexPath) as? PaymentMethod else {
@@ -161,7 +166,35 @@ extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension CheckoutVC {
+extension CheckoutVC: UpdateTotal {
+    
+    func UpdateTotal(sender: UITableViewCell, totalPick: Int, totalFee: Int) {
+        let index4 = IndexPath(row: data.count + 3, section: 0)
+        let cell4: TotalPay = listCheckout.cellForRow(at: index4) as! TotalPay
+        
+        let checkData = cell4.totalPay.text
+
+        if checkData == "Rp0" {
+            cell4.totalPay.text = "Rp\(idrFormat(harga: totalPick + totalFee))"
+        } else {
+//            let newStr = checkData!.index(checkData!.startIndex, offsetBy: 2)
+//            let amountData = checkData!.suffix(from: newStr)
+            
+//            let amount = Int("\(amountData.replacingOccurrences(of: ".", with: ""))")
+            
+            if self.totalFee != totalFee {
+                self.totalFee = totalFee
+            }
+            
+            if self.totalPick != totalPick && totalPick > 0 {
+                self.totalPick = totalPick
+            }
+            
+            let sumAmount = self.totalFee + self.totalPick
+            
+            cell4.totalPay.text = "Rp\(idrFormat(harga: sumAmount))"
+        }
+    }
     
     func initializeHideKeyboard(){
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(

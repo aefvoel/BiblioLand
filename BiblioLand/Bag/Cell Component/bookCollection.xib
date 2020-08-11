@@ -65,6 +65,9 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                 </variation>
+                                <connections>
+                                    <action selector="addBag:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kDh-PR-c0Y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
