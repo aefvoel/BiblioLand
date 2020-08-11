@@ -140,12 +140,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-    @IBAction func goProfile(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "Profile") as! ProfileVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension SignInViewController: ASAuthorizationControllerDelegate {
