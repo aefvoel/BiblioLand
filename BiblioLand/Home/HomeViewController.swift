@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import CloudKit
 
 class HomeViewController: UIViewController, UISearchControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     var searchControllers: UISearchController!
     
+    var balance = 0
+    var deposit = 0
+    
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
     var books = [Books]()
     var genres = [Genre]()
     
@@ -45,6 +50,59 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
 
         navigationController?.navigationBar.barTintColor = greenColor
     }
+    
+    func retrieveUser(){
+        if let userCloudID = UserDefaults.standard.string(forKey: "userID") {
+            let recordID = CKRecord.ID(recordName: userCloudID)
+            privateDatabase.fetch(withRecordID: recordID) { (fetchedRecord, error) in
+                if error == nil {
+                    self.balance = fetchedRecord?["balance"] as! Int
+                    self.deposit = fetchedRecord?["deposit"] as! Int
+                    //TODO
+                } else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
+    func retrieveData(){
+        let predicate = NSPredicate(value: true)
+            
+        let query = CKQuery(recordType: "books", predicate: predicate)
+//        query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
+            
+        let operation = CKQueryOperation(query: query)
+        operation.desiredKeys = ["title","category", "price_per_day", "photo"]
+            
+        operation.recordFetchedBlock = { record in
+            
+            let photo = record["photo"] as! CKAsset
+            let data = try? Data(contentsOf: photo.fileURL!)
+            let price = (record["price_per_day"] as! NSNumber).stringValue
+            self.books.append(Books(bookTitle: record["title"]!, bookPrice: "Rp. \(price)", bookImg: UIImage(data: data!)!))
+            self.genres.append(Genre(genreName: record["category"]!))
+                
+        }
+            
+        operation.queryCompletionBlock = { cursor, error in
+                
+            DispatchQueue.main.async {
+                    
+                if error == nil {
+                    self.table.reloadData()
+                } else {
+                    print(error!.localizedDescription)
+                }
+                    
+            }
+                
+        }
+            
+        privateDatabase.add(operation)
+            
+    
+    }
+    
     @IBAction func goToCart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Bag", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as! BagVC
@@ -69,12 +127,14 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
         genres.append(Genre(genreName: "Romance"))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavbar()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavbar()
-
         table.register(BookTableViewCell.nib(), forCellReuseIdentifier: BookTableViewCell.identifier)
         table.register(AllBookTableViewCell.nib(), forCellReuseIdentifier: AllBookTableViewCell.identifier)
         table.register(AllGenreTableViewCell.nib(), forCellReuseIdentifier: AllGenreTableViewCell.identifier)
@@ -83,7 +143,8 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
         table.dataSource = self
         table.separatorStyle = .none
         
-        insertData()
+        retrieveData()
+        retrieveUser()
     }
     
 
@@ -135,7 +196,7 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = table.dequeueReusableCell(withIdentifier: "walletCell", for: indexPath)
+            let cell = table.dequeueReusableCell(withIdentifier: "walletCell", for: indexPath) as! WalletCell
             cell.selectionStyle = .none
            
             cell.layer.shadowColor = UIColor.black.cgColor
@@ -143,6 +204,9 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
             cell.layer.shadowOpacity = 0.2
             cell.layer.shadowOffset = .zero
             cell.layer.shadowRadius = 5
+            
+            cell.textBalance.text = "Rp. \(balance)"
+            cell.textDeposit.text = "Rp. \(deposit)"
             
             return cell
         } else if indexPath.section == 3 {
@@ -179,9 +243,9 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
 }
 
 struct Books {
-    let bookTitle: String
-    let bookPrice: String
-    let bookImg: UIImage
+    var bookTitle: String
+    var bookPrice: String
+    var bookImg: UIImage
     
     init(bookTitle: String, bookPrice: String, bookImg: UIImage) {
         self.bookTitle = bookTitle
@@ -196,4 +260,9 @@ struct Genre {
     init(genreName: String) {
         self.genreName = genreName
     }
+}
+
+class WalletCell: UITableViewCell {
+    @IBOutlet weak var textBalance: UILabel!
+    @IBOutlet weak var textDeposit: UILabel!
 }
