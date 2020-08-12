@@ -15,6 +15,12 @@ class CheckoutDoneVC: UIViewController {
     @IBOutlet weak var pickupDate: UILabel!
     @IBOutlet weak var deliveryMethod: UILabel!
     @IBOutlet weak var buttonBorrowingDetails: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var labelDelivery: UILabel!
+    
+    var pickupDates: String?
+    var deliveryMethods: String?
+    var pickupTime: String?
     
     func setUpView() {
         let backButton = UIBarButtonItem()
@@ -30,8 +36,17 @@ class CheckoutDoneVC: UIViewController {
         topSection.roundedView()
         bottomSection.roundedView()
         
-        pickupDate.text = "10 July 2020"
-        deliveryMethod.text = "Ojek DQ Same Day"
+        pickupDate.text = pickupDates!
+        
+        if deliveryMethods!.contains("Ojek") == true {
+            textLabel.isHidden = false
+            deliveryMethod.text = deliveryMethods!
+            labelDelivery.text = "Delivery Method"
+        } else {
+            textLabel.isHidden = true
+            deliveryMethod.text = pickupTime!
+            labelDelivery.text = "Pickup Time"
+        }
     }
     
     override func viewDidLoad() {

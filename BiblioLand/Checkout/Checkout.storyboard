@@ -149,7 +149,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLs-Qp-SQg">
-                                <rect key="frame" x="16" y="505" width="383" height="192"/>
+                                <rect key="frame" x="16" y="505" width="383" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delivery Method" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppj-Dx-3hN">
@@ -193,6 +193,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-c1-MPF">
+                                        <rect key="frame" x="18" y="74" width="97" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -204,7 +214,9 @@
                         <outlet property="bottomSection" destination="oLs-Qp-SQg" id="Ant-I9-g4b"/>
                         <outlet property="buttonBorrowingDetails" destination="bN1-Si-igX" id="uC7-1A-ixW"/>
                         <outlet property="deliveryMethod" destination="MzW-TI-tcC" id="ib7-Cr-tlr"/>
+                        <outlet property="labelDelivery" destination="Ppj-Dx-3hN" id="2jp-IQ-GH9"/>
                         <outlet property="pickupDate" destination="o4b-Kb-TR3" id="XBU-4Z-vHw"/>
+                        <outlet property="textLabel" destination="dkV-Te-7dd" id="y9U-07-hRY"/>
                         <outlet property="topSection" destination="QDf-46-9JT" id="J68-eE-5y6"/>
                     </connections>
                 </viewController>
@@ -231,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3b-jY-jEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.5797101449277" y="-541.07142857142856"/>
+            <point key="canvasLocation" x="2152" y="-770"/>
         </scene>
     </scenes>
     <resources>

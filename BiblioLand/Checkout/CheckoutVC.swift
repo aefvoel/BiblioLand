@@ -72,19 +72,25 @@ class CheckoutVC: UIViewController {
         
         let index3 = IndexPath(row: data.count+2, section: 0)
         let cell3: PaymentMethod = self.listCheckout.cellForRow(at: index3) as! PaymentMethod
-        
-        let index4 = IndexPath(row: data.count+3, section: 0)
-        let cell4: TotalPay = self.listCheckout.cellForRow(at: index4) as! TotalPay
-        
-        print(cell4.totalPay.text)
-        
+                
         if cell.startDatePick.text == "" || cell.endDatePick.text == "" || cell2.deliveryMethod.text == "" || cell2.pickupTime.text == "" || cell3.choosePayment.text == "" {
             let alert = showAlert(message: "All data must be filled")
             self.present(alert, animated: true, completion: nil)
         } else {
-            let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
-            self.navigationController?.pushViewController(vc, animated: true)
+            let alert = UIAlertController(title: "Confirmation", message: "Are you sure want to buy this books", preferredStyle: .alert)
+                    
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {(UIAlertAction) -> Void in }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(UIAlertAction) -> Void in
+                let storyboard = UIStoryboard(name: "Checkout", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "CheckoutDoneVC") as! CheckoutDoneVC
+                vc.deliveryMethods = cell2.deliveryMethod.text!
+                vc.pickupDates = cell.startDatePick.text!
+                vc.pickupTime = cell2.pickupTime.text!
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

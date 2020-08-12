@@ -18,6 +18,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var showPassSignInButton: UIButton!
     
     @IBOutlet weak var signInBtnView: SignupButton!
+    
     var authorizationButton: ASAuthorizationAppleIDButton!
     let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
     var isUserExist = false
@@ -135,10 +136,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             
         }
-        
         privateDatabase.add(operation)
-        
-        
     }
 }
 

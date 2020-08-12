@@ -24,9 +24,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ProfileTable.delegate = self
         ProfileTable.dataSource = self
         ProfileTable.separatorStyle = .none
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func insertData(){

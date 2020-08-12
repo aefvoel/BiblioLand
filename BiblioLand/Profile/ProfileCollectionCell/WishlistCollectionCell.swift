@@ -31,5 +31,4 @@ class WishlistCollectionCell: UICollectionViewCell {
         self.bookTitleLbl.text = bookWishlist.bookTitle
         self.bookImg.image = bookWishlist.bookImg
     }
-
 }
