@@ -12,7 +12,7 @@ import CloudKit
 class BookDetailsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var bookDetailsTable: UITableView!
-    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").publicCloudDatabase
     
     var bookInfo = BookInfo()
     var seeMoreisClicked = false

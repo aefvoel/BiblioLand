@@ -19,7 +19,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signInBtnView: SignupButton!
     var authorizationButton: ASAuthorizationAppleIDButton!
-    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").publicCloudDatabase
     var isUserExist = false
 
     override func viewDidLoad() {

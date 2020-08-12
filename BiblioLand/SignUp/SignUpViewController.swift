@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     func saveData() {
 
-        let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+        let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").publicCloudDatabase
 
         let record = CKRecord(recordType: "userInfo", recordID: CKRecord.ID(recordName: UserDefaults.standard.string(forKey: "userID")!))
 

@@ -16,8 +16,10 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
     
     var balance = 0
     var deposit = 0
+    var address: String? = ""
+    @IBOutlet weak var location: UIBarButtonItem!
     
-    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").publicCloudDatabase
     var books = [Books]()
     var genres = [Genre]()
     
@@ -58,6 +60,7 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
                 if error == nil {
                     self.balance = fetchedRecord?["balance"] as! Int
                     self.deposit = fetchedRecord?["deposit"] as! Int
+                    self.address = fetchedRecord?["address"]
                     //TODO
                 } else {
                     print(error?.localizedDescription)
@@ -207,6 +210,8 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
             
             cell.textBalance.text = "Rp. \(balance)"
             cell.textDeposit.text = "Rp. \(deposit)"
+            
+            self.location.title = address
             
             return cell
         } else if indexPath.section == 3 {

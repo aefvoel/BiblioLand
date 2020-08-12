@@ -14,7 +14,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var ProfileTable: UITableView!
     
     var bookWishlist = [BookWishlist]()
-    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").privateCloudDatabase
+    let privateDatabase = CKContainer(identifier: "iCloud.id.appleacademy.Biblio").publicCloudDatabase
     
     var profileData = Profile()
     
@@ -29,12 +29,15 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ProfileTable.dataSource = self
         ProfileTable.separatorStyle = .none
         
-        retrieveUser()
+        
         
         
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        retrieveUser()
+        ProfileTable.reloadData()
+    }
     func retrieveUser(){
         if let userCloudID = UserDefaults.standard.string(forKey: "userID") {
             let recordID = CKRecord.ID(recordName: userCloudID)
@@ -42,8 +45,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if error == nil {
                     self.profileData.profileName = fetchedRecord?["name"] as! String
                     self.profileData.profileLocation = fetchedRecord?["address"] as! String
-                    
-                    self.ProfileTable.reloadData()
                     //TODO
                 } else {
                     print(error?.localizedDescription)
