@@ -26,4 +26,8 @@ class bookCollection: UICollectionViewCell {
         
         shadowDecorate()
     }
+    
+    @IBAction func addBag(_ sender: UIButton) {
+        
+    }
 }

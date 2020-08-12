@@ -15,9 +15,7 @@ class ComponentListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        booksData = insertBook()
-        
+                
         bookRecommendation.dataSource = self
         bookRecommendation.delegate = self
         

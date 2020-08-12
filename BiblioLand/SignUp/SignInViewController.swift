@@ -140,7 +140,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
 }
 
 extension SignInViewController: ASAuthorizationControllerDelegate {

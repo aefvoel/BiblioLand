@@ -862,7 +862,7 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A97SVDB2Q9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -884,7 +884,7 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A97SVDB2Q9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (

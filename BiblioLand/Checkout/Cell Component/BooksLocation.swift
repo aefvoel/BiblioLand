@@ -27,6 +27,8 @@ class BooksLocation: UITableViewCell {
     var locationManager:CLLocationManager!
     var userLong = 0.0
     var userLat = 0.0
+    
+    weak var delegate: UpdateTotal?
 
     func setUpTimePick() {
         pickupTime.inputView = timePick
@@ -147,11 +149,13 @@ extension BooksLocation: UIPickerViewDelegate, UIPickerViewDataSource {
             pickupTime.text = ""
             pickupTime.isEnabled = true
             deliveryCost.text = "Rp0"
+            delegate?.UpdateTotal(sender: self, totalPick: 0, totalFee: 0)
         } else {
             deliveryMethod.text = method[row]
             pickupTime.text = "-"
             pickupTime.isEnabled = false
             deliveryCost.text = "Rp\(idrFormat(harga: deliverPay))"
+            delegate?.UpdateTotal(sender: self, totalPick: 0, totalFee: 15000)
         }
     }
 }

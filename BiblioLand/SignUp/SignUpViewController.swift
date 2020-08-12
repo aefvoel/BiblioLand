@@ -29,6 +29,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         
         // to disable strong password autofill
         passwordTextField.textContentType = .oneTimeCode
+        
+        initializeHideKeyboard()
     }
     
     func toHome(){
@@ -123,5 +125,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
     }
 }

@@ -11,7 +11,7 @@
         <!--Sign UpVC-->
         <scene sceneID="xFH-yF-lY8">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" id="BRs-zz-Qpw" customClass="SignUpVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="BRs-zz-Qpw" customClass="SignUpVC" customModule="Bibl_io" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2pw-fg-35i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1046"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,7 +166,7 @@
         <!--Sign InVC-->
         <scene sceneID="eSA-af-x3q">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" id="Z2d-VX-xwo" customClass="SignInVC" customModule="BiblioLand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="Z2d-VX-xwo" customClass="SignInVC" customModule="Bibl_io" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PQ9-vl-zbJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

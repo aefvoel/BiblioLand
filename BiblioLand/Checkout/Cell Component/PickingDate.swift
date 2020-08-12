@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UpdateTotal: AnyObject {
+    func UpdateTotal(sender: UITableViewCell, totalPick: Int, totalFee: Int)
+}
+
 class PickingDate: UITableViewCell {
 
     @IBOutlet weak var startDatePick: UITextField!
@@ -20,6 +24,8 @@ class PickingDate: UITableViewCell {
     let startPicker = UIDatePicker()
     let endPicker = UIDatePicker()
     let locale = Locale.preferredLanguages.first
+    
+    weak var delegate: UpdateTotal?
     
     func setUpStartDate() {
         startDatePick.inputView = startPicker
@@ -79,6 +85,8 @@ extension PickingDate {
             }
             
             totalToPay.text = "Rp\(idrFormat(harga: sumAmount))"
+            
+            delegate?.UpdateTotal(sender: self, totalPick: sumAmount, totalFee: 0)
         }
     }
     

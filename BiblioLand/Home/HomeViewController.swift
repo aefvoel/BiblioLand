@@ -152,7 +152,6 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UITableV
             return 1
     }
     
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
         
