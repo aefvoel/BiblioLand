@@ -98,13 +98,13 @@
 		D76F046824C7489800EC3999 /* AllGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F046624C7489800EC3999 /* AllGenreTableViewCell.swift */; };
 		D76F046924C7489800EC3999 /* AllGenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F046724C7489800EC3999 /* AllGenreTableViewCell.xib */; };
 		D777E3EC24D8B07900CC24AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777E3EB24D8B07900CC24AD /* MapViewController.swift */; };
+		D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */; };
+		D7A04E1F24E0F995006ACC9D /* Status2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1E24E0F995006ACC9D /* Status2TableViewCell.swift */; };
 		E60EEC7524D9013B00FD179B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EEC7424D9013B00FD179B /* Signup.storyboard */; };
 		E60EEC7724D9017A00FD179B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7624D9017A00FD179B /* SignUpViewController.swift */; };
 		E60EEC7924D90AA600FD179B /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7824D90AA600FD179B /* SignupButton.swift */; };
 		E60EEC7B24D90AB400FD179B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7A24D90AB400FD179B /* CustomTextView.swift */; };
 		E60EEC7D24DA54A000FD179B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EEC7C24DA54A000FD179B /* SignInViewController.swift */; };
-		D7A04E1D24E0F4C9006ACC9D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1C24E0F4C9006ACC9D /* StatusTableViewCell.swift */; };
-		D7A04E1F24E0F995006ACC9D /* Status2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A04E1E24E0F995006ACC9D /* Status2TableViewCell.swift */; };
 		E6BF0CF724C8948B008706A9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BF0CF624C8948B008706A9 /* Onboarding.storyboard */; };
 		E6BF0CF924C894AF008706A9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CF824C894AF008706A9 /* OnboardingViewController.swift */; };
 		E6BF0CFB24C894D6008706A9 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF0CFA24C894D6008706A9 /* OnboardingButton.swift */; };
@@ -862,7 +862,7 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -884,7 +884,7 @@
 				CODE_SIGN_ENTITLEMENTS = BiblioLand/BiblioLand.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = BiblioLand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
