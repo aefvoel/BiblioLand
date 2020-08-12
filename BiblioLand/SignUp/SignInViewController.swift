@@ -153,14 +153,16 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                 
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
                     if error == nil {
-                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                        UserDefaults.standard.set(true, forKey: "isExist")
                         UserDefaults.standard.set(userID, forKey: "userID")
+                        print("masuk")
                     } else {
                         UserDefaults.standard.set(userID, forKey: "userID")
                         UserDefaults.standard.set(name, forKey: "userName")
                         UserDefaults.standard.set(emailAddr, forKey: "userEmail")
-                        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+                        UserDefaults.standard.set(false, forKey: "isExist")
                         print(error?.localizedDescription)
+                        print("ga masuk")
                     }
                 }
                 
@@ -175,13 +177,14 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                         let userEmailAddr = fetchedInfo["emailAddress"] as? String
                         
                         //You can now use the user name and email address (like save it to local)
-                        print("Name is \(name) and email address is \(userEmailAddr)")
+                        print("tes")
                         
                     }
                 }
             }
         }
-        if UserDefaults.standard.bool(forKey: "isLoggedIn"){
+        if UserDefaults.standard.bool(forKey: "isExist"){
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
             toHome()
         }else {
             toSignUp()
