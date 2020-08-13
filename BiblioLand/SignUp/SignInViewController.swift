@@ -43,7 +43,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         if (UserDefaults.standard.bool(forKey: "isLoggedIn")){
-            toHome()
+//            toHome()
         }
     }
     @objc func handleAppleIdRequest(){
@@ -161,6 +161,15 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                         print(error?.localizedDescription)
                         print("ga masuk")
                     }
+                    DispatchQueue.main.async {
+                        if UserDefaults.standard.bool(forKey: "isExist"){
+                            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                            self.toHome()
+                        }else {
+                            self.toSignUp()
+                        }
+                    }
+                    
                 }
                 
                 
@@ -180,12 +189,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                 }
             }
         }
-        if UserDefaults.standard.bool(forKey: "isExist"){
-            UserDefaults.standard.set(true, forKey: "isLoggedIn")
-            toHome()
-        }else {
-            toSignUp()
-        }
+        
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
